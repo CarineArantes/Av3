@@ -59,7 +59,7 @@ namespace SuaCarteiraEmDia.View.Catagoria
                 Nome = "root",
                 UserName = "root",
                 Senha = "admin",
-                DataCricao = DateTime.Now,
+                DataCriacao = DateTime.Now,
                 DataAlteracao = DateTime.Now,
                 Ativo = true
             };

@@ -36,7 +36,7 @@ namespace SuaCarteiraEmDia.Controller
                 }
 
                 categoria.UsuarioID = 1;
-                categoria.DataCricao = DateTime.Now;
+                categoria.DataCriacao = DateTime.Now;
                 categoria.DataAlteracao = DateTime.Now;
                 categoria.Ativo = true;
                 db.Categorias.Add(categoria);
