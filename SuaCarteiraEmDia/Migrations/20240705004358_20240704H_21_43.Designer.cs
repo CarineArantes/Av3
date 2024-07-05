@@ -12,8 +12,8 @@ using SuaCarteiraEmDia.Data;
 namespace SuaCarteiraEmDia.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240628001743_DBSuaCarteiraEmDia_27-06-24_H21_17")]
-    partial class DBSuaCarteiraEmDia_270624_H21_17
+    [Migration("20240705004358_20240704H_21_43")]
+    partial class _20240704H_21_43
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,13 +38,13 @@ namespace SuaCarteiraEmDia.Migrations
 
                     b.Property<string>("Cor")
                         .IsRequired()
-                        .HasMaxLength(6)
-                        .HasColumnType("nvarchar(6)");
+                        .HasMaxLength(7)
+                        .HasColumnType("nvarchar(7)");
 
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataCricao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Nome")
@@ -79,10 +79,10 @@ namespace SuaCarteiraEmDia.Migrations
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataCricao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataMovimetacao")
+                    b.Property<DateTime>("DataMovimentacao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Descricao")
@@ -117,7 +117,7 @@ namespace SuaCarteiraEmDia.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataCricao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Pergunta")
@@ -154,7 +154,7 @@ namespace SuaCarteiraEmDia.Migrations
                     b.Property<DateTime>("DataAlteracao")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("DataCricao")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Nome")

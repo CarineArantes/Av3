@@ -25,19 +25,19 @@ namespace SuaCarteiraEmDia.Model
 
 
         [Required]
-        public required DateTime DataMovimetacao { get; set; }
+        public  DateTime DataMovimentacao { get; set; }
 
 
         [Required]
-        public required DateTime DataCricao { get; set; }
+        public  DateTime DataCriacao { get; set; }
 
 
         [Required]
-        public required DateTime DataAlteracao { get; set; }
+        public  DateTime DataAlteracao { get; set; }
 
 
         [Required]
-        public required bool Ativo { get; set; } = true;
+        public  bool Ativo { get; set; } = true;
 
 
         [Required]

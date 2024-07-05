@@ -1,4 +1,5 @@
-using SuaCarteiraEmDia.View;
+using SuaCarteiraEmDia.View.Login;
+using SuaCarteiraEmDia.View.Principal;
 
 namespace SuaCarteiraEmDia
 {
@@ -13,9 +14,7 @@ namespace SuaCarteiraEmDia
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
-
-            
+            Application.Run(new FrmLogin());           
 
         }
     }

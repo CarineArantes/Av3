@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SuaCarteiraEmDia.Migrations
 {
     /// <inheritdoc />
-    public partial class DBSuaCarteiraEmDia_270624_H21_17 : Migration
+    public partial class _20240704H_21_43 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -20,7 +20,7 @@ namespace SuaCarteiraEmDia.Migrations
                     Nome = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(60)", maxLength: 60, nullable: false),
                     Senha = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    DataCricao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Ativo = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -36,8 +36,8 @@ namespace SuaCarteiraEmDia.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Cor = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
-                    DataCricao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Cor = table.Column<string>(type: "nvarchar(7)", maxLength: 7, nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Ativo = table.Column<bool>(type: "bit", nullable: false),
                     UsuarioID = table.Column<int>(type: "int", nullable: false)
@@ -61,7 +61,7 @@ namespace SuaCarteiraEmDia.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Pergunta = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Resposta = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false),
-                    DataCricao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UsuarioID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -84,8 +84,8 @@ namespace SuaCarteiraEmDia.Migrations
                     Tipo = table.Column<string>(type: "nvarchar(1)", nullable: false),
                     Descricao = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Valor = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    DataMovimetacao = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DataCricao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataMovimentacao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DataAlteracao = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Ativo = table.Column<bool>(type: "bit", nullable: false),
                     UsuarioID = table.Column<int>(type: "int", nullable: false),

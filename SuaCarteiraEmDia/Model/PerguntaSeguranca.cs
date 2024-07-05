@@ -22,7 +22,7 @@ namespace SuaCarteiraEmDia.Model
 
 
         [Required]
-        public required DateTime DataCricao { get; set; }
+        public  DateTime DataCriacao { get; set; }
 
 
         [Required]

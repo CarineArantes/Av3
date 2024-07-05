@@ -16,20 +16,21 @@ namespace SuaCarteiraEmDia.Model
         public required string Nome { get; set; }
 
 
-        [Required, MaxLength(6)]
+        [Required, MaxLength(7)]
         public required string Cor { get; set; }
 
 
         [Required]
-        public required DateTime DataCricao { get; set; }
+        public  DateTime DataCriacao { get; set; }
 
 
         [Required]
-        public required DateTime DataAlteracao { get; set; }
+        public  DateTime DataAlteracao { get; set; }
 
 
         [Required]
-        public required bool Ativo { get; set; } = true;
+        public  bool Ativo { get; set; } = true;
+
 
 
         [Required]

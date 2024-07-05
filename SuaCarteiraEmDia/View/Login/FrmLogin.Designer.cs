@@ -1,6 +1,6 @@
-﻿namespace SuaCarteiraEmDia.View
+﻿namespace SuaCarteiraEmDia.View.Login
 {
-    partial class Login
+    partial class FrmLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            panel1 = new Panel();
             SuspendLayout();
             // 
-            // button1
+            // panel1
             // 
-            button1.Location = new Point(212, 129);
-            button1.Name = "button1";
-            button1.Size = new Size(385, 210);
-            button1.TabIndex = 0;
-            button1.Text = "TESSSSSTE";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            panel1.BackColor = Color.White;
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(120, 60);
+            panel1.Margin = new Padding(0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(441, 447);
+            panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
-            // Login
+            // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(button1);
-            Name = "Login";
-            Text = "Login";
-            Load += Login_Load;
+            BackColor = Color.DeepSkyBlue;
+            ClientSize = new Size(681, 567);
+            Controls.Add(panel1);
+            Name = "FrmLogin";
+            Padding = new Padding(120, 60, 120, 60);
+            Text = "Sua Carteira Em Dia ";
+            Load += FrmLogin_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
+        private Panel panel1;
     }
 }
