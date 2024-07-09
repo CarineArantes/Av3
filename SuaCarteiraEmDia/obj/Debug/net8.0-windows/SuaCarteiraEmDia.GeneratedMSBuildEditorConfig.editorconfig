@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SuaCarteiraEmDia
-build_property.ProjectDir = C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\
+build_property.ProjectDir = C:\Users\pedro\Documents\GitHub\Av3\SuaCarteiraEmDia\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
