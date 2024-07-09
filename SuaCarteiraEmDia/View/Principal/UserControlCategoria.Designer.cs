@@ -45,10 +45,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Red;
+            BackColor = Color.White;
             Controls.Add(label1);
             Name = "UserControlCategoria";
-            Size = new Size(846, 437);
+            Size = new Size(608, 334);
             Load += UserControlCategoria_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -123,6 +123,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Cursor = Cursors.Hand;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(1, 4);
             pictureBox1.Name = "pictureBox1";
@@ -165,9 +166,9 @@
             btn_relatorio.Cursor = Cursors.Hand;
             btn_relatorio.FlatAppearance.BorderSize = 0;
             btn_relatorio.FlatStyle = FlatStyle.Flat;
-            btn_relatorio.Location = new Point(-14, 250);
+            btn_relatorio.Location = new Point(0, 250);
             btn_relatorio.Name = "btn_relatorio";
-            btn_relatorio.Size = new Size(159, 41);
+            btn_relatorio.Size = new Size(124, 41);
             btn_relatorio.TabIndex = 7;
             btn_relatorio.Text = "Relatórios";
             btn_relatorio.UseVisualStyleBackColor = false;
@@ -179,9 +180,9 @@
             btn_categoria.Cursor = Cursors.Hand;
             btn_categoria.FlatAppearance.BorderSize = 0;
             btn_categoria.FlatStyle = FlatStyle.Flat;
-            btn_categoria.Location = new Point(-14, 193);
+            btn_categoria.Location = new Point(0, 193);
             btn_categoria.Name = "btn_categoria";
-            btn_categoria.Size = new Size(159, 41);
+            btn_categoria.Size = new Size(124, 41);
             btn_categoria.TabIndex = 6;
             btn_categoria.Text = "Categorias";
             btn_categoria.UseVisualStyleBackColor = false;
@@ -193,9 +194,9 @@
             btn_movimetacao.Cursor = Cursors.Hand;
             btn_movimetacao.FlatAppearance.BorderSize = 0;
             btn_movimetacao.FlatStyle = FlatStyle.Flat;
-            btn_movimetacao.Location = new Point(-14, 133);
+            btn_movimetacao.Location = new Point(0, 133);
             btn_movimetacao.Name = "btn_movimetacao";
-            btn_movimetacao.Size = new Size(159, 41);
+            btn_movimetacao.Size = new Size(124, 41);
             btn_movimetacao.TabIndex = 5;
             btn_movimetacao.Text = "Movimentações";
             btn_movimetacao.UseVisualStyleBackColor = false;
