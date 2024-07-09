@@ -57,5 +57,15 @@ namespace SuaCarteiraEmDia.View.Login
             principal.Show();
             this.Hide();
         }
+
+        private void username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void senha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
