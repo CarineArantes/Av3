@@ -46,7 +46,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            BackColor = Color.FromArgb(255, 128, 128);
+            BackColor = Color.White;
             Controls.Add(label1);
             Name = "UserControlMovimentacao";
             Size = new Size(482, 307);

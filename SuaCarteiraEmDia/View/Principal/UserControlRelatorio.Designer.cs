@@ -47,6 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(label1);
             Name = "UserControlRelatorio";
+            Size = new Size(573, 335);
             ResumeLayout(false);
             PerformLayout();
         }
