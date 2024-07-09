@@ -1,2 +1,5 @@
 # Visual Studio
 .vs/
+# Ignore the bin and obj directories
+bin/
+obj/
