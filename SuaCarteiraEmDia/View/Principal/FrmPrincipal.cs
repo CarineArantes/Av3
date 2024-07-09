@@ -28,6 +28,11 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+
+            DateTime dataAtual = DateTime.Now;
+
+            lab_data.Text = dataAtual.ToString();
+
             using (GraphicsPath path = new GraphicsPath())
             {
                 Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
@@ -42,6 +47,10 @@ namespace SuaCarteiraEmDia.View.Principal
 
                 this.Region = new Region(path);
             }
+
+
+
+
         }
 
         private void btn_movimetacao_Click(object sender, EventArgs e)
@@ -100,5 +109,22 @@ namespace SuaCarteiraEmDia.View.Principal
 
         }
 
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(
+               "Deseja sair realmete ?",
+               "Confirmação",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question,
+               MessageBoxDefaultButton.Button2
+            );
+
+            // Verifica se o usuário clicou em 'Yes'
+            if (result == DialogResult.Yes)
+            {
+                // Fecha a aplicação
+                Application.Exit();
+            }
+        }
     }
 }

@@ -29,11 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button1 = new Button();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(button1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(120, 60);
             panel1.Margin = new Padding(0);
@@ -41,6 +44,16 @@
             panel1.Size = new Size(441, 447);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(128, 207);
+            button1.Name = "button1";
+            button1.Size = new Size(152, 45);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FrmLogin
             // 
@@ -51,13 +64,16 @@
             Controls.Add(panel1);
             Name = "FrmLogin";
             Padding = new Padding(120, 60, 120, 60);
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sua Carteira Em Dia ";
             Load += FrmLogin_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
+        private Button button1;
     }
 }

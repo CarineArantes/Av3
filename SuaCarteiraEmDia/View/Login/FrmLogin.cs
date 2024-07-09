@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SuaCarteiraEmDia.Data;
+using SuaCarteiraEmDia.View.Principal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -48,6 +49,13 @@ namespace SuaCarteiraEmDia.View.Login
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmPrincipal principal = new FrmPrincipal();
+            principal.Show();
+            this.Hide();
         }
     }
 }
