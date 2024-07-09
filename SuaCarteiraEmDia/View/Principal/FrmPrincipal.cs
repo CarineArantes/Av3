@@ -29,14 +29,12 @@ namespace SuaCarteiraEmDia.View.Principal
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
 
-            DateTime dataAtual = DateTime.Now;
-
-            lab_data.Text = dataAtual.ToString();
+            lab_data.Text = DateTime.Now.ToString();
 
             using (GraphicsPath path = new GraphicsPath())
             {
                 Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
-                int radius = 10; // Define o raio dos cantos arredondados
+                int radius = 8; // Define o raio dos cantos arredondados
 
                 path.AddArc(rect.X, rect.Y, 2 * radius, 2 * radius, 180, 90); // Canto superior esquerdo
                 path.AddArc(rect.X + rect.Width - 2 * radius, rect.Y, 2 * radius, 2 * radius, 270, 90); // Canto superior direito
@@ -47,9 +45,6 @@ namespace SuaCarteiraEmDia.View.Principal
 
                 this.Region = new Region(path);
             }
-
-
-
 
         }
 
