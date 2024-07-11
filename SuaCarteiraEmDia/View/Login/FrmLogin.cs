@@ -67,5 +67,17 @@ namespace SuaCarteiraEmDia.View.Login
         {
 
         }
+
+        private void esqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmRecuperarSenha recuperarSenha = new FrmRecuperarSenha();
+            recuperarSenha.Show();
+        }
+
+        private void cadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmCadastro cadastro = new FrmCadastro();
+            cadastro.Show();
+        }
     }
 }
