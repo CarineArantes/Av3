@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            cadastrar = new LinkLabel();
+            esqueciSenha = new LinkLabel();
             label3 = new Label();
             senha = new TextBox();
             username = new TextBox();
             label2 = new Label();
             btnLogin = new Button();
             label1 = new Label();
-            esqueciSenha = new LinkLabel();
-            cadastrar = new LinkLabel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,6 +58,36 @@
             panel1.Size = new Size(401, 447);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // cadastrar
+            // 
+            cadastrar.ActiveLinkColor = Color.CornflowerBlue;
+            cadastrar.AutoSize = true;
+            cadastrar.Font = new Font("Segoe UI", 12F);
+            cadastrar.LinkColor = Color.CornflowerBlue;
+            cadastrar.Location = new Point(270, 265);
+            cadastrar.Name = "cadastrar";
+            cadastrar.Size = new Size(77, 21);
+            cadastrar.TabIndex = 7;
+            cadastrar.TabStop = true;
+            cadastrar.Text = "Cadastrar";
+            cadastrar.VisitedLinkColor = Color.CornflowerBlue;
+            cadastrar.LinkClicked += cadastrar_LinkClicked;
+            // 
+            // esqueciSenha
+            // 
+            esqueciSenha.ActiveLinkColor = Color.CornflowerBlue;
+            esqueciSenha.AutoSize = true;
+            esqueciSenha.Font = new Font("Segoe UI", 12F);
+            esqueciSenha.LinkColor = Color.CornflowerBlue;
+            esqueciSenha.Location = new Point(54, 265);
+            esqueciSenha.Name = "esqueciSenha";
+            esqueciSenha.Size = new Size(119, 21);
+            esqueciSenha.TabIndex = 6;
+            esqueciSenha.TabStop = true;
+            esqueciSenha.Text = "Esqueci a senha";
+            esqueciSenha.VisitedLinkColor = Color.CornflowerBlue;
+            esqueciSenha.LinkClicked += esqueciSenha_LinkClicked;
             // 
             // label3
             // 
@@ -130,43 +160,14 @@
             label1.TabIndex = 1;
             label1.Text = "Login";
             // 
-            // esqueciSenha
-            // 
-            esqueciSenha.ActiveLinkColor = Color.CornflowerBlue;
-            esqueciSenha.AutoSize = true;
-            esqueciSenha.Font = new Font("Segoe UI", 12F);
-            esqueciSenha.LinkColor = Color.CornflowerBlue;
-            esqueciSenha.Location = new Point(54, 265);
-            esqueciSenha.Name = "esqueciSenha";
-            esqueciSenha.Size = new Size(119, 21);
-            esqueciSenha.TabIndex = 6;
-            esqueciSenha.TabStop = true;
-            esqueciSenha.Text = "Esqueci a senha";
-            esqueciSenha.VisitedLinkColor = Color.CornflowerBlue;
-            // 
-            // cadastrar
-            // 
-            cadastrar.ActiveLinkColor = Color.CornflowerBlue;
-            cadastrar.AutoSize = true;
-            cadastrar.Font = new Font("Segoe UI", 12F);
-            cadastrar.LinkColor = Color.CornflowerBlue;
-            cadastrar.Location = new Point(270, 265);
-            cadastrar.Name = "cadastrar";
-            cadastrar.Size = new Size(77, 21);
-            cadastrar.TabIndex = 7;
-            cadastrar.TabStop = true;
-            cadastrar.Text = "Cadastrar";
-            cadastrar.VisitedLinkColor = Color.CornflowerBlue;
-            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
             ClientSize = new Size(681, 567);
-            ControlBox = false;
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmLogin";
             Padding = new Padding(140, 60, 140, 60);
             StartPosition = FormStartPosition.CenterScreen;
