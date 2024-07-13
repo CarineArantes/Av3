@@ -40,7 +40,7 @@ namespace SuaCarteiraEmDia.Controller
                 categoria.DataAlteracao = DateTime.Now;
                 categoria.Ativo = true;
                 db.Categorias.Add(categoria);
-                
+
                 db.SaveChanges();
 
 
@@ -49,8 +49,19 @@ namespace SuaCarteiraEmDia.Controller
             }
         }
 
+        
+        public static List<Categoria> listarCategorias()
+        {
+
+            using (DataContext db = new DataContext())
+            {
+                    return db.Categorias.ToList();
+               
+
+
+            }
+        }
 
     }
 }
 
-  

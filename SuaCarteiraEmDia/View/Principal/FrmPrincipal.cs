@@ -28,10 +28,13 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
+
+            lab_data.Text = DateTime.Now.ToString();
+
             using (GraphicsPath path = new GraphicsPath())
             {
                 Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
-                int radius = 10; // Define o raio dos cantos arredondados
+                int radius = 8; // Define o raio dos cantos arredondados
 
                 path.AddArc(rect.X, rect.Y, 2 * radius, 2 * radius, 180, 90); // Canto superior esquerdo
                 path.AddArc(rect.X + rect.Width - 2 * radius, rect.Y, 2 * radius, 2 * radius, 270, 90); // Canto superior direito
@@ -42,6 +45,7 @@ namespace SuaCarteiraEmDia.View.Principal
 
                 this.Region = new Region(path);
             }
+
         }
 
         private void btn_movimetacao_Click(object sender, EventArgs e)
@@ -100,5 +104,22 @@ namespace SuaCarteiraEmDia.View.Principal
 
         }
 
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(
+               "Deseja sair realmete ?",
+               "Confirmação",
+               MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question,
+               MessageBoxDefaultButton.Button2
+            );
+
+            // Verifica se o usuário clicou em 'Yes'
+            if (result == DialogResult.Yes)
+            {
+                // Fecha a aplicação
+                Application.Exit();
+            }
+        }
     }
 }
