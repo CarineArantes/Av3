@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace SuaCarteiraEmDia.Migrations
 {
     /// <inheritdoc />
-    public partial class H19_20 : Migration
+    public partial class H15_42 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
