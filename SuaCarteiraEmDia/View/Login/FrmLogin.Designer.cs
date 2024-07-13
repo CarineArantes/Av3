@@ -166,9 +166,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
             ClientSize = new Size(681, 567);
-            ControlBox = false;
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmLogin";
             Padding = new Padding(140, 60, 140, 60);
             StartPosition = FormStartPosition.CenterScreen;

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SuaCarteiraEmDia.Data;
+using SuaCarteiraEmDia.Utils;
 using SuaCarteiraEmDia.View.Principal;
 using System;
 using System.Collections.Generic;
@@ -51,13 +52,6 @@ namespace SuaCarteiraEmDia.View.Login
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FrmPrincipal principal = new FrmPrincipal();
-            principal.Show();
-            this.Hide();
-        }
-
         private void username_TextChanged(object sender, EventArgs e)
         {
 
@@ -65,6 +59,34 @@ namespace SuaCarteiraEmDia.View.Login
 
         private void senha_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (username.Text.Trim().Length <= 0 || senha.Text.Trim().Length <= 0)
+            {
+                MessageBox.Show("Todos os campos devem ser preenchidos!");
+            }
+            else
+            {
+                try
+                {
+                  bool login = Controller.UsuarioController.Login(username.Text, senha.Text);
+                    if (login)
+                    {
+                        FrmPrincipal principal = new FrmPrincipal();
+                        principal.Show();
+                        this.Hide();
+                           
+                    }
+                }
+                catch(Exception ex) {
+                    MessageBox.Show(ex.Message);
+                }
+               
+            }
+
 
         }
 
