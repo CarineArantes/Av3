@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SuaCarteiraEmDia.Controller;
+using SuaCarteiraEmDia.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +14,36 @@ namespace SuaCarteiraEmDia.View.Principal
 {
     public partial class UserControlMovimentacao : UserControl
     {
-        public UserControlMovimentacao()
+        int IDUsuario;
+        public UserControlMovimentacao(int IDUsuario)
         {
             InitializeComponent();
+            this.IDUsuario = IDUsuario;
+        }
+
+        private void buscaDados()
+        {
+            List<Movimentacao> movimentacaos = MovimentacaoController.Busca(IDUsuario, dateTimePicker1.Value.Date);
+            if (movimentacaos.Count > 1)
+            {
+                MessageBox.Show("há dados");
+            }
+            else
+            {
+                MessageBox.Show("NAO há dados");
+            }
+
         }
 
         private void UserControlMovimentacao_Load(object sender, EventArgs e)
         {
-           dateTimePicker1.MaxDate = DateTime.Now;
+            dateTimePicker1.MaxDate = DateTime.Now;
+            buscaDados();
+        }
+
+        private void buttonBuscar_Click(object sender, EventArgs e)
+        {
+            buscaDados();
         }
     }
 }

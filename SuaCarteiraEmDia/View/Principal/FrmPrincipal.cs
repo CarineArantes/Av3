@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SuaCarteiraEmDia.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,12 @@ namespace SuaCarteiraEmDia.View.Principal
 {
     public partial class FrmPrincipal : Form
     {
+        private Usuario usuario;
 
-        public FrmPrincipal()
+        public FrmPrincipal(Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
         }
 
         enum menu
@@ -56,7 +59,7 @@ namespace SuaCarteiraEmDia.View.Principal
                 if (menu == menu.UserControlMovimentacao && !(panelConteudo.Controls[0] is UserControlMovimentacao))
                 {
                     panelConteudo.Controls.Clear();
-                    panelConteudo.Controls.Add(new UserControlMovimentacao() { Dock = DockStyle.Fill });
+                    panelConteudo.Controls.Add(new UserControlMovimentacao(usuario.Id) { Dock = DockStyle.Fill });
                 }
                 else if (menu == menu.UserControlCategoria && !(panelConteudo.Controls[0] is UserControlCategoria))
                 {
@@ -76,7 +79,7 @@ namespace SuaCarteiraEmDia.View.Principal
                 switch (menu)
                 {
                     case menu.UserControlMovimentacao:
-                        panelConteudo.Controls.Add(new UserControlMovimentacao() { Dock = DockStyle.Fill }); break;
+                        panelConteudo.Controls.Add(new UserControlMovimentacao(usuario.Id) { Dock = DockStyle.Fill }); break;
                     case menu.UserControlCategoria:
                         panelConteudo.Controls.Add(new UserControlCategoria() { Dock = DockStyle.Fill }); break;
                     case menu.UserControlRelatorio:
@@ -90,16 +93,6 @@ namespace SuaCarteiraEmDia.View.Principal
         private void btn_sair_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void lab_data_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelConteudo_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)

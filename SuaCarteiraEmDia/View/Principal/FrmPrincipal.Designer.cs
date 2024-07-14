@@ -75,7 +75,6 @@
             panelConteudo.Name = "panelConteudo";
             panelConteudo.Size = new Size(729, 433);
             panelConteudo.TabIndex = 0;
-            panelConteudo.Paint += panelConteudo_Paint;
             // 
             // panel2
             // 

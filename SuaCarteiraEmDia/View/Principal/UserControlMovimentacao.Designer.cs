@@ -475,6 +475,7 @@
             buttonBuscar.TabIndex = 1;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = false;
+            buttonBuscar.Click += buttonBuscar_Click;
             // 
             // dateTimePicker1
             // 

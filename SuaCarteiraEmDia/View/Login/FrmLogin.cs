@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SuaCarteiraEmDia.Data;
+using SuaCarteiraEmDia.Model;
 using SuaCarteiraEmDia.Utils;
 using SuaCarteiraEmDia.View.Principal;
 using System;
@@ -72,13 +73,12 @@ namespace SuaCarteiraEmDia.View.Login
             {
                 try
                 {
-                  bool login = Controller.UsuarioController.Login(username.Text, senha.Text);
-                    if (login)
+                  Usuario usuario = Controller.UsuarioController.Login(username.Text, senha.Text);
+                    if (usuario != null)
                     {
-                        FrmPrincipal principal = new FrmPrincipal();
+                        FrmPrincipal principal = new FrmPrincipal(usuario);
                         principal.Show();
                         this.Hide();
-                           
                     }
                 }
                 catch(Exception ex) {

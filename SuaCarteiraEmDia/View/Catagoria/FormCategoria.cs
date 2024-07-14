@@ -64,7 +64,7 @@ namespace SuaCarteiraEmDia.View.Catagoria
                 Ativo = true
             };
 
-            UsuarioController.Salvar(usuario);
+          //  MovimentacaoController.Salvar(usuario);
 
             Categoria categoria = new Categoria
             {

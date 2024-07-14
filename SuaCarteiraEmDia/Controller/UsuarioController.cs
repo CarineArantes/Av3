@@ -10,7 +10,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SuaCarteiraEmDia.Controller
 {
-    public class UsuarioController { 
+    public class UsuarioController
+    { 
         public static void Salvar(Usuario usuario)
         {
             // validar entradas 
@@ -22,7 +23,7 @@ namespace SuaCarteiraEmDia.Controller
             }
         }
 
-        public static bool Login(string username, string senha)
+        public static Usuario Login(string username, string senha)
         {
             senha = GerarHash(senha);
             using (DataContext db = new DataContext())
@@ -35,7 +36,7 @@ namespace SuaCarteiraEmDia.Controller
                     throw new Exception("Usuário ou senha incorreto!");
                 }
 
-                return true;
+                return usuario;
             }
         }
 
