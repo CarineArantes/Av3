@@ -28,20 +28,7 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            /*  using (GraphicsPath path = new GraphicsPath())
-              {
-                  Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
-                  int radius = 8; // Define o raio dos cantos arredondados
-
-                  path.AddArc(rect.X, rect.Y, 2 * radius, 2 * radius, 180, 90); // Canto superior esquerdo
-                  path.AddArc(rect.X + rect.Width - 2 * radius, rect.Y, 2 * radius, 2 * radius, 270, 90); // Canto superior direito
-                  path.AddArc(rect.X + rect.Width - 2 * radius, rect.Y + rect.Height - 2 * radius, 2 * radius, 2 * radius, 0, 90); // Canto inferior direito
-                  path.AddArc(rect.X, rect.Y + rect.Height - 2 * radius, 2 * radius, 2 * radius, 90, 90); // Canto inferior esquerdo
-
-                  path.CloseFigure();
-
-                  this.Region = new Region(path);
-              }*/
+            Open(menu.UserControlMovimentacao);
         }
 
         private void btn_movimetacao_Click(object sender, EventArgs e)
@@ -102,6 +89,21 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void btn_sair_Click(object sender, EventArgs e)
         {
+            Application.Exit();
+        }
+
+        private void lab_data_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelConteudo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
             var result = MessageBox.Show(
                "Deseja sair realmete ?",
                "Confirmação",
@@ -111,16 +113,10 @@ namespace SuaCarteiraEmDia.View.Principal
             );
 
             // Verifica se o usuário clicou em 'Yes'
-            if (result == DialogResult.Yes)
+            if (result == DialogResult.No)
             {
-                // Fecha a aplicação
-                Application.Exit();
+                e.Cancel = true; // Cancela o fechamento do formulário
             }
-        }
-
-        private void lab_data_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
