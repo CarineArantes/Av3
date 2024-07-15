@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Azure.Core.HttpHeader;
 
 namespace SuaCarteiraEmDia.View.Principal
 {
@@ -26,7 +27,9 @@ namespace SuaCarteiraEmDia.View.Principal
             List<Movimentacao> movimentacaos = MovimentacaoController.Busca(IDUsuario, dateTimePicker1.Value.Date);
             if (movimentacaos.Count > 1)
             {
-                MessageBox.Show("há dados");
+                foreach (Movimentacao movimentacao in movimentacaos) {
+                    flowLayou1.Controls.Add(new UserControlCardMovimentacao(movimentacao));
+                }
             }
             else
             {

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlMovimentacao));
             tableLayoutPanel1 = new TableLayoutPanel();
+            flowLayou1 = new FlowLayoutPanel();
             tableLayoutPanelV = new TableLayoutPanel();
             panel1 = new Panel();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -86,6 +87,7 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(flowLayou1, 0, 2);
             tableLayoutPanel1.Controls.Add(tableLayoutPanelV, 0, 1);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
@@ -97,6 +99,15 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 66F));
             tableLayoutPanel1.Size = new Size(731, 415);
             tableLayoutPanel1.TabIndex = 0;
+            // 
+            // flowLayou1
+            // 
+            flowLayou1.Dock = DockStyle.Fill;
+            flowLayou1.FlowDirection = FlowDirection.TopDown;
+            flowLayou1.Location = new Point(3, 144);
+            flowLayou1.Name = "flowLayou1";
+            flowLayou1.Size = new Size(725, 268);
+            flowLayou1.TabIndex = 2;
             // 
             // tableLayoutPanelV
             // 
@@ -587,5 +598,6 @@
         private DateTimePicker dateTimePicker1;
         private TableLayoutPanel tableLayoutPanel11;
         private Button buttonNovaMovimentacao;
+        private FlowLayoutPanel flowLayou1;
     }
 }

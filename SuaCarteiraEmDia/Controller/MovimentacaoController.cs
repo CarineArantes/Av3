@@ -1,4 +1,5 @@
-﻿using SuaCarteiraEmDia.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SuaCarteiraEmDia.Data;
 using SuaCarteiraEmDia.Model;
 using System;
 using System.Collections.Generic;
@@ -21,16 +22,12 @@ namespace SuaCarteiraEmDia.Controller
 
         public static List<Movimentacao> Busca(int IDUsuario, DateTime dataReferencia)
         {
-            string x = dataReferencia.ToString("yyyy-MM-dd");
-            DateTime dataReferencia1 = DateTime.Parse(x);
-            MessageBox.Show($"{dataReferencia} => {x} => {dataReferencia1}");
-
-
-
             using (DataContext db = new DataContext())
             {
                return db.Movimentacoes
-                              .Where(u => u.UsuarioID == IDUsuario && u.DataMovimentacao == new DateTime() && u.Ativo == true).ToList();
+                              .Where(m => m.UsuarioID == IDUsuario && m.DataMovimentacao.Date == dataReferencia.Date && m.Ativo == true)
+                              .Include(c => c.Categoria)
+                              .ToList();
             }
         }
     }

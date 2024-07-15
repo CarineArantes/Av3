@@ -16,6 +16,9 @@
     <Compile Update="View\Principal\FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\Principal\UserControlCardMovimentacao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="View\Principal\UserControlCategoria.cs">
       <SubType>UserControl</SubType>
     </Compile>
