@@ -30,5 +30,17 @@ namespace SuaCarteiraEmDia.Controller
                               .ToList();
             }
         }
+
+        public static decimal SaldoCarteira(int IDUsuario) {
+
+            using (DataContext db = new DataContext())
+            {
+                return db.Movimentacoes
+                        .Where(m => m.UsuarioID == IDUsuario)
+                        .Select(t => t.Tipo == 'E' ? t.Valor : -t.Valor)
+                        .Sum();
+            }
+        }
+
     }
 }
