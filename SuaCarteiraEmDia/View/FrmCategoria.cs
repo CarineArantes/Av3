@@ -1,5 +1,6 @@
 ﻿using SuaCarteiraEmDia.Controller;
 using SuaCarteiraEmDia.Model;
+using SuaCarteiraEmDia.View.Principal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,9 +16,13 @@ namespace SuaCarteiraEmDia.View.Catagoria
     
     public partial class FormCategoria : Form
     {
+        int id;
         string cor = "";
-        public FormCategoria()
+
+        public FormCategoria(int ?iduser)
         {
+            id = (int)iduser;
+           
             InitializeComponent();
         }
 
@@ -41,11 +46,11 @@ namespace SuaCarteiraEmDia.View.Catagoria
 
                 Color color = ColorTranslator.FromHtml(hexColor);
 
-                // Alterar a cor do CheckBox
-                textBox2.BackColor = color;  // Define a cor de fundo
-                textBox3.Text = hexColor.ToString();
+             
+                txtCor.BackColor = color; 
+                txtCorHexadecimal.Text = hexColor.ToString();
                 cor = hexColor.ToString();
-                // checkBox1.ForeColor = color;
+                
             }
 
 
@@ -53,30 +58,37 @@ namespace SuaCarteiraEmDia.View.Catagoria
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            Usuario usuario = new Usuario
+            if (txtNomCategoria.Text.Trim()=="")
             {
-                Nome = "root",
-                UserName = "root",
-                Senha = "admin",
-                DataCriacao = DateTime.Now,
-                DataAlteracao = DateTime.Now,
-                Ativo = true
-            };
+                MessageBox.Show("Digite um nome para a categoria", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            UsuarioController.Salvar(usuario);
-
-            Categoria categoria = new Categoria
+            if (txtCorHexadecimal.Text.Trim() == "")
             {
-                Nome = textBox1.Text,
-                Cor = cor,
-                UsuarioID = 1
+                MessageBox.Show("Selecione uma cor para a categoria", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
 
-            };
+            }
 
-            CategoriaController.CriarCategoria(categoria);
+            try
+            {
 
 
+
+                CategoriaController.CriarCategoria(txtNomCategoria.Text, cor, id);
+
+
+                MessageBox.Show("Categoria cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+
+            this.Close();
         }
     }
 }
