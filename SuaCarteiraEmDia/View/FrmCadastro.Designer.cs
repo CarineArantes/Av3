@@ -36,17 +36,17 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             panel2 = new Panel();
             groupBox1 = new GroupBox();
-            textBox5 = new TextBox();
+            respostaCadastro = new TextBox();
             label8 = new Label();
-            textBox3 = new TextBox();
+            perguntaCadastro = new TextBox();
             label6 = new Label();
             label7 = new Label();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
+            confsenhaCadastro = new TextBox();
+            nomeCadastro = new TextBox();
             label5 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
-            username = new TextBox();
+            senhaCadastro = new TextBox();
+            usernameCadastro = new TextBox();
             label4 = new Label();
             button1 = new Button();
             panel1.SuspendLayout();
@@ -136,12 +136,12 @@
             panel2.BackColor = Color.WhiteSmoke;
             panel2.Controls.Add(groupBox1);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox4);
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(confsenhaCadastro);
+            panel2.Controls.Add(nomeCadastro);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label3);
-            panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(username);
+            panel2.Controls.Add(senhaCadastro);
+            panel2.Controls.Add(usernameCadastro);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(button1);
             panel2.Location = new Point(66, 59);
@@ -153,9 +153,9 @@
             // 
             groupBox1.BackColor = Color.WhiteSmoke;
             groupBox1.BackgroundImageLayout = ImageLayout.Center;
-            groupBox1.Controls.Add(textBox5);
+            groupBox1.Controls.Add(respostaCadastro);
             groupBox1.Controls.Add(label8);
-            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(perguntaCadastro);
             groupBox1.Controls.Add(label6);
             groupBox1.FlatStyle = FlatStyle.Flat;
             groupBox1.Font = new Font("Segoe UI", 12F);
@@ -165,19 +165,18 @@
             groupBox1.TabIndex = 19;
             groupBox1.TabStop = false;
             groupBox1.Text = "Crie uma pergunta de segurança para recuperar a senha";
-            groupBox1.Enter += groupBox1_Enter;
             // 
-            // textBox5
+            // respostaCadastro
             // 
-            textBox5.BackColor = Color.WhiteSmoke;
-            textBox5.BorderStyle = BorderStyle.FixedSingle;
-            textBox5.Font = new Font("Segoe UI", 12F);
-            textBox5.ForeColor = Color.Black;
-            textBox5.Location = new Point(15, 198);
-            textBox5.Margin = new Padding(0);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(293, 29);
-            textBox5.TabIndex = 21;
+            respostaCadastro.BackColor = Color.WhiteSmoke;
+            respostaCadastro.BorderStyle = BorderStyle.FixedSingle;
+            respostaCadastro.Font = new Font("Segoe UI", 12F);
+            respostaCadastro.ForeColor = Color.Black;
+            respostaCadastro.Location = new Point(15, 198);
+            respostaCadastro.Margin = new Padding(0);
+            respostaCadastro.Name = "respostaCadastro";
+            respostaCadastro.Size = new Size(293, 29);
+            respostaCadastro.TabIndex = 21;
             // 
             // label8
             // 
@@ -189,17 +188,17 @@
             label8.TabIndex = 20;
             label8.Text = "Resposta";
             // 
-            // textBox3
+            // perguntaCadastro
             // 
-            textBox3.BackColor = Color.WhiteSmoke;
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.ForeColor = Color.Black;
-            textBox3.Location = new Point(15, 104);
-            textBox3.Margin = new Padding(0);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(293, 29);
-            textBox3.TabIndex = 19;
+            perguntaCadastro.BackColor = Color.WhiteSmoke;
+            perguntaCadastro.BorderStyle = BorderStyle.FixedSingle;
+            perguntaCadastro.Font = new Font("Segoe UI", 12F);
+            perguntaCadastro.ForeColor = Color.Black;
+            perguntaCadastro.Location = new Point(15, 104);
+            perguntaCadastro.Margin = new Padding(0);
+            perguntaCadastro.Name = "perguntaCadastro";
+            perguntaCadastro.Size = new Size(293, 29);
+            perguntaCadastro.TabIndex = 19;
             // 
             // label6
             // 
@@ -221,28 +220,28 @@
             label7.TabIndex = 15;
             label7.Text = "Confirme a senha";
             // 
-            // textBox4
+            // confsenhaCadastro
             // 
-            textBox4.BackColor = Color.WhiteSmoke;
-            textBox4.BorderStyle = BorderStyle.FixedSingle;
-            textBox4.Font = new Font("Segoe UI", 12F);
-            textBox4.Location = new Point(39, 278);
-            textBox4.Margin = new Padding(0);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(293, 29);
-            textBox4.TabIndex = 14;
+            confsenhaCadastro.BackColor = Color.WhiteSmoke;
+            confsenhaCadastro.BorderStyle = BorderStyle.FixedSingle;
+            confsenhaCadastro.Font = new Font("Segoe UI", 12F);
+            confsenhaCadastro.Location = new Point(39, 278);
+            confsenhaCadastro.Margin = new Padding(0);
+            confsenhaCadastro.Name = "confsenhaCadastro";
+            confsenhaCadastro.Size = new Size(293, 29);
+            confsenhaCadastro.TabIndex = 14;
             // 
-            // textBox2
+            // nomeCadastro
             // 
-            textBox2.BackColor = Color.WhiteSmoke;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.ForeColor = Color.Black;
-            textBox2.Location = new Point(39, 72);
-            textBox2.Margin = new Padding(0);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(293, 29);
-            textBox2.TabIndex = 11;
+            nomeCadastro.BackColor = Color.WhiteSmoke;
+            nomeCadastro.BorderStyle = BorderStyle.FixedSingle;
+            nomeCadastro.Font = new Font("Segoe UI", 12F);
+            nomeCadastro.ForeColor = Color.Black;
+            nomeCadastro.Location = new Point(39, 72);
+            nomeCadastro.Margin = new Padding(0);
+            nomeCadastro.Name = "nomeCadastro";
+            nomeCadastro.Size = new Size(293, 29);
+            nomeCadastro.TabIndex = 11;
             // 
             // label5
             // 
@@ -263,30 +262,29 @@
             label3.Size = new Size(53, 21);
             label3.TabIndex = 9;
             label3.Text = "Senha";
-            label3.Click += label3_Click;
             // 
-            // textBox1
+            // senhaCadastro
             // 
-            textBox1.BackColor = Color.WhiteSmoke;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(39, 207);
-            textBox1.Margin = new Padding(0);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(293, 29);
-            textBox1.TabIndex = 8;
+            senhaCadastro.BackColor = Color.WhiteSmoke;
+            senhaCadastro.BorderStyle = BorderStyle.FixedSingle;
+            senhaCadastro.Font = new Font("Segoe UI", 12F);
+            senhaCadastro.Location = new Point(39, 207);
+            senhaCadastro.Margin = new Padding(0);
+            senhaCadastro.Name = "senhaCadastro";
+            senhaCadastro.Size = new Size(293, 29);
+            senhaCadastro.TabIndex = 8;
             // 
-            // username
+            // usernameCadastro
             // 
-            username.BackColor = Color.WhiteSmoke;
-            username.BorderStyle = BorderStyle.FixedSingle;
-            username.Font = new Font("Segoe UI", 12F);
-            username.ForeColor = Color.Black;
-            username.Location = new Point(39, 139);
-            username.Margin = new Padding(0);
-            username.Name = "username";
-            username.Size = new Size(293, 29);
-            username.TabIndex = 7;
+            usernameCadastro.BackColor = Color.WhiteSmoke;
+            usernameCadastro.BorderStyle = BorderStyle.FixedSingle;
+            usernameCadastro.Font = new Font("Segoe UI", 12F);
+            usernameCadastro.ForeColor = Color.Black;
+            usernameCadastro.Location = new Point(39, 139);
+            usernameCadastro.Margin = new Padding(0);
+            usernameCadastro.Name = "usernameCadastro";
+            usernameCadastro.Size = new Size(293, 29);
+            usernameCadastro.TabIndex = 7;
             // 
             // label4
             // 
@@ -312,6 +310,7 @@
             button1.TabIndex = 5;
             button1.Text = "Salvar";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // FrmCadastro
             // 
@@ -344,18 +343,18 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel2;
         private Button button1;
-        internal TextBox textBox2;
+        internal TextBox nomeCadastro;
         private Label label5;
         private Label label3;
-        private TextBox textBox1;
-        internal TextBox username;
+        private TextBox senhaCadastro;
+        internal TextBox usernameCadastro;
         private Label label4;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox confsenhaCadastro;
         private GroupBox groupBox1;
-        internal TextBox textBox5;
+        internal TextBox respostaCadastro;
         private Label label8;
-        internal TextBox textBox3;
+        internal TextBox perguntaCadastro;
         private Label label6;
     }
 }
