@@ -162,7 +162,7 @@
             groupBox1.Location = new Point(424, 43);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(322, 264);
-            groupBox1.TabIndex = 19;
+            groupBox1.TabIndex = 5;
             groupBox1.TabStop = false;
             groupBox1.Text = "Crie uma pergunta de segurança para recuperar a senha";
             // 
@@ -176,7 +176,7 @@
             respostaCadastro.Margin = new Padding(0);
             respostaCadastro.Name = "respostaCadastro";
             respostaCadastro.Size = new Size(293, 29);
-            respostaCadastro.TabIndex = 21;
+            respostaCadastro.TabIndex = 7;
             // 
             // label8
             // 
@@ -198,7 +198,7 @@
             perguntaCadastro.Margin = new Padding(0);
             perguntaCadastro.Name = "perguntaCadastro";
             perguntaCadastro.Size = new Size(293, 29);
-            perguntaCadastro.TabIndex = 19;
+            perguntaCadastro.TabIndex = 6;
             // 
             // label6
             // 
@@ -229,7 +229,7 @@
             confsenhaCadastro.Margin = new Padding(0);
             confsenhaCadastro.Name = "confsenhaCadastro";
             confsenhaCadastro.Size = new Size(293, 29);
-            confsenhaCadastro.TabIndex = 14;
+            confsenhaCadastro.TabIndex = 4;
             // 
             // nomeCadastro
             // 
@@ -241,7 +241,7 @@
             nomeCadastro.Margin = new Padding(0);
             nomeCadastro.Name = "nomeCadastro";
             nomeCadastro.Size = new Size(293, 29);
-            nomeCadastro.TabIndex = 11;
+            nomeCadastro.TabIndex = 1;
             // 
             // label5
             // 
@@ -272,7 +272,7 @@
             senhaCadastro.Margin = new Padding(0);
             senhaCadastro.Name = "senhaCadastro";
             senhaCadastro.Size = new Size(293, 29);
-            senhaCadastro.TabIndex = 8;
+            senhaCadastro.TabIndex = 3;
             // 
             // usernameCadastro
             // 
@@ -284,7 +284,7 @@
             usernameCadastro.Margin = new Padding(0);
             usernameCadastro.Name = "usernameCadastro";
             usernameCadastro.Size = new Size(293, 29);
-            usernameCadastro.TabIndex = 7;
+            usernameCadastro.TabIndex = 2;
             // 
             // label4
             // 
@@ -307,7 +307,7 @@
             button1.Margin = new Padding(0);
             button1.Name = "button1";
             button1.Size = new Size(144, 35);
-            button1.TabIndex = 5;
+            button1.TabIndex = 10;
             button1.Text = "Salvar";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;

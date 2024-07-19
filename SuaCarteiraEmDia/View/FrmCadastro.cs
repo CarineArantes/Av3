@@ -1,4 +1,5 @@
-﻿using SuaCarteiraEmDia.Model;
+﻿using SuaCarteiraEmDia.Controller;
+using SuaCarteiraEmDia.Model;
 using SuaCarteiraEmDia.Utils;
 using SuaCarteiraEmDia.View.Principal;
 using System;
@@ -31,6 +32,21 @@ namespace SuaCarteiraEmDia.View.Login
             }
             else
             {
+                try
+                {
+                    Usuario usuario = Controller.UsuarioController.BuscarUsuario(usernameCadastro.Text);
+
+                    if (usuario != null)
+                    {
+                        MessageBox.Show("Usuário já existente!");
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
                 if (!verificacoes.verificarCaracteres(nomeCadastro.Text, 60, 3))
                 {
                     MessageBox.Show("O nome deve conter entre 3 e 60 caracteres");
@@ -65,9 +81,19 @@ namespace SuaCarteiraEmDia.View.Login
                     MessageBox.Show("A resposta deve conter entre 2 e 20 caracteres");
                     return;
                 }
-
-
             }
+
+            try
+            {
+                UsuarioController.Salvar(nomeCadastro.Text, usernameCadastro.Text, senhaCadastro.Text, perguntaCadastro.Text, respostaCadastro.Text);
+                MessageBox.Show("Usuário cadastrado com sucesso!");
+                this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

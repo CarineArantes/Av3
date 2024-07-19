@@ -12,15 +12,55 @@ namespace SuaCarteiraEmDia.Controller
 {
     public class UsuarioController
     { 
-        public static void Salvar(Usuario usuario)
+        public static void Salvar(string nome, string usermame, string senha, string perguntaCadastro, string respostaCadastro)
         {
-            // validar entradas 
 
-            using (DataContext db = new DataContext())
+            senha = GerarHash(senha);
+            Usuario NovoUsuario = new()
             {
-                db.Usuarios.Add(usuario);
-                db.SaveChanges();
+                Nome = nome,
+                UserName = usermame,
+                Senha = senha,
+                DataCriacao = DateTime.Now,
+                DataAlteracao = DateTime.Now,
+                Ativo = true
+            };
+
+            try
+            {
+                using (DataContext db = new DataContext())
+                {
+                    db.Usuarios.Add(NovoUsuario);
+                    db.SaveChanges();
+                }
             }
+            catch
+            {
+                throw new Exception("Erro ao cadastrar usuário!");
+            }
+
+            try
+            {
+                respostaCadastro = GerarHash(respostaCadastro);
+                PerguntaSeguranca NovaPergunta = new()
+                {
+                    Pergunta = perguntaCadastro,
+                    Resposta = respostaCadastro,
+                    DataCriacao = DateTime.Now,
+                    UsuarioID = NovoUsuario.Id
+                };
+
+                using (DataContext db = new DataContext())
+                {
+                    db.Perguntas.Add(NovaPergunta);
+                    db.SaveChanges();
+                }
+            }
+            catch
+            {
+                throw new Exception("Erro ao salvar pergunta!");
+            }
+
         }
 
         public static Usuario Login(string username, string senha)
@@ -35,6 +75,17 @@ namespace SuaCarteiraEmDia.Controller
                 {
                     throw new Exception("Usuário ou senha incorreto!");
                 }
+
+                return usuario;
+            }
+        }
+
+        public static Usuario? BuscarUsuario(string username)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var usuario = db.Usuarios
+                              .FirstOrDefault(u => u.UserName == username);
 
                 return usuario;
             }
