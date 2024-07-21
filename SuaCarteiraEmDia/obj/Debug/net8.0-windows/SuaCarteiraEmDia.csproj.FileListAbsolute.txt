@@ -679,3 +679,4 @@ D:\Av3-pedro_almeida\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.
 D:\Av3-pedro_almeida\SuaCarteiraEmDia\obj\Debug\net8.0-windows\ref\SuaCarteiraEmDia.dll
 D:\Av3-pedro_almeida\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Catagoria.FrmCategoriaEditar.resources
 C:\Users\pedro\Documents\GitHub\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Catagoria.FrmCategoriaEditar.resources
+C:\Users\pedro\Documents\GitHub\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.FrmMovimentacao.resources
