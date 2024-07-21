@@ -80,14 +80,18 @@ namespace SuaCarteiraEmDia.Controller
             }
         }
 
-        public static Usuario? BuscarUsuario(string username)
+        public static Usuario? BuscarUsuario(string username, bool ativo = false)
         {
             using (DataContext db = new DataContext())
             {
-                var usuario = db.Usuarios
-                              .FirstOrDefault(u => u.UserName == username);
+                var usuario = db.Usuarios.Where(u => u.UserName == username);
 
-                return usuario;
+                if (ativo)
+                {
+                    usuario = usuario.Where(u => u.Ativo == true);
+                }
+
+                return usuario.FirstOrDefault();
             }
         }
 

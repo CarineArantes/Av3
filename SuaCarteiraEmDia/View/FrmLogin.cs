@@ -93,8 +93,26 @@ namespace SuaCarteiraEmDia.View.Login
 
         private void esqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmRecuperarSenha recuperarSenha = new FrmRecuperarSenha();
-            recuperarSenha.Show();
+            Verificacoes verificacoes = new Verificacoes();
+
+            if (!verificacoes.verificarCaracteres(username.Text, 60, 4))
+            {
+                MessageBox.Show("O username deve conter entre 4 e 60 caracteres");
+                return;
+            }
+
+            Usuario usuario = Controller.UsuarioController.BuscarUsuario(username.Text, true);
+
+            if (usuario != null)
+            {
+                FrmRecuperarSenha recuperarSenha = new FrmRecuperarSenha(usuario.Id);
+                recuperarSenha.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não encontrado!");
+            }
+
         }
 
         private void cadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

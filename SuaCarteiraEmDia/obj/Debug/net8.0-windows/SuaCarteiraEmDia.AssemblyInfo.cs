@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SuaCarteiraEmDia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1bade42ee99611d609f41cb2a5bdf94f8777440d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce3d8cac5152d320fe5c633ee7cc60cbb8d9b10a")]
 [assembly: System.Reflection.AssemblyProductAttribute("SuaCarteiraEmDia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SuaCarteiraEmDia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

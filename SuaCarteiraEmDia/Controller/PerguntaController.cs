@@ -19,5 +19,15 @@ namespace SuaCarteiraEmDia.Controller
                 db.SaveChanges();
             }
         }
+
+        public static PerguntaSeguranca BuscarPergunta(int idusuario)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var pergunta = db.Perguntas.Where(p => p.UsuarioID == idusuario);
+
+                return pergunta.FirstOrDefault();
+            }
+        }
     }
 }

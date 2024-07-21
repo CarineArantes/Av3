@@ -108,7 +108,7 @@
             senha.Margin = new Padding(0);
             senha.Name = "senha";
             senha.Size = new Size(293, 29);
-            senha.TabIndex = 4;
+            senha.TabIndex = 2;
             senha.TextChanged += senha_TextChanged;
             // 
             // username
@@ -121,7 +121,7 @@
             username.Margin = new Padding(0);
             username.Name = "username";
             username.Size = new Size(293, 29);
-            username.TabIndex = 3;
+            username.TabIndex = 1;
             username.TextChanged += username_TextChanged;
             // 
             // label2
@@ -145,7 +145,7 @@
             btnLogin.Margin = new Padding(0);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(293, 44);
-            btnLogin.TabIndex = 0;
+            btnLogin.TabIndex = 3;
             btnLogin.Text = "Acessar";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += button1_Click;
