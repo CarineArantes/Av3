@@ -59,7 +59,7 @@ namespace SuaCarteiraEmDia.View.Login
             {
                 try
                 {
-                  Usuario usuario = Controller.UsuarioController.Login(username.Text, senha.Text);
+                    Usuario usuario = Controller.UsuarioController.Login(username.Text, senha.Text);
                     if (usuario != null)
                     {
                         FrmPrincipal principal = new FrmPrincipal(usuario);
@@ -67,10 +67,11 @@ namespace SuaCarteiraEmDia.View.Login
                         this.Hide();
                     }
                 }
-                catch(Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                 }
-               
+
             }
         }
 
@@ -108,6 +109,11 @@ namespace SuaCarteiraEmDia.View.Login
         {
             FrmCadastro cadastro = new FrmCadastro();
             cadastro.Show();
+        }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

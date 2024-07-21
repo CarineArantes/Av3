@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SuaCarteiraEmDia.Controller
 {
@@ -80,6 +81,29 @@ namespace SuaCarteiraEmDia.Controller
 
         }
 
+        public static bool Editar(int IDUsuario, string nome, string usermame, string ?senha)
+        {
+            try
+            {
+                using (DataContext db = new DataContext())
+                {
+                    var usuario = db.Usuarios.FirstOrDefault(u => u.Id == IDUsuario);
+                    if(usuario == null) return false;
+                    usuario.Nome = nome;
+                    usuario.UserName = usermame;
+                    if (senha != null) usuario.Senha = GeraHash.SHA_256(senha);
+                    usuario.DataAlteracao = DateTime.Now;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+
         public static Usuario? BuscarUsuario(string username, bool ativo = false)
         {
             using (DataContext db = new DataContext())
@@ -92,6 +116,39 @@ namespace SuaCarteiraEmDia.Controller
                 }
 
                 return usuario.FirstOrDefault();
+            }
+        }
+
+        public static Usuario BuscarUsuario(int IDUsuario, bool ativo = false)
+        {
+            using (DataContext db = new DataContext())
+            {
+                var usuario = db.Usuarios.Where(u => u.Id == IDUsuario);
+                if (ativo)
+                {
+                    usuario = usuario.Where(u => u.Ativo == true);
+                }
+                return usuario.FirstOrDefault();
+            }
+        }
+
+        public static bool Desativar(int IDUsuario)
+        {
+            try
+            {
+                using (DataContext db = new DataContext())
+                {
+                    var usuario = db.Usuarios.FirstOrDefault(u => u.Id == IDUsuario);
+                    if (usuario == null) return false;
+                    usuario.DataAlteracao = DateTime.Now;
+                    usuario.Ativo = false;
+                    db.SaveChanges();
+                    return true;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
 

@@ -467,6 +467,7 @@
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4);
             groupBox1.Size = new Size(173, 71);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
@@ -480,9 +481,9 @@
             buttonBuscar.FlatStyle = FlatStyle.Flat;
             buttonBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonBuscar.ForeColor = Color.White;
-            buttonBuscar.Location = new Point(3, 45);
+            buttonBuscar.Location = new Point(4, 44);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(167, 23);
+            buttonBuscar.Size = new Size(165, 23);
             buttonBuscar.TabIndex = 1;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = false;
@@ -492,9 +493,9 @@
             // 
             dateTimePicker1.Dock = DockStyle.Fill;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(3, 19);
+            dateTimePicker1.Location = new Point(4, 20);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(167, 23);
+            dateTimePicker1.Size = new Size(165, 23);
             dateTimePicker1.TabIndex = 0;
             // 
             // tableLayoutPanel11

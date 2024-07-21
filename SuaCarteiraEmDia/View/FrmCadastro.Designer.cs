@@ -299,6 +299,7 @@
             // button1
             // 
             button1.BackColor = Color.CornflowerBlue;
+            button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderColor = Color.CornflowerBlue;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 14F);

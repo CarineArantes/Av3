@@ -62,6 +62,7 @@
             // 
             cadastrar.ActiveLinkColor = Color.CornflowerBlue;
             cadastrar.AutoSize = true;
+            cadastrar.Cursor = Cursors.Hand;
             cadastrar.Font = new Font("Segoe UI", 12F);
             cadastrar.LinkColor = Color.CornflowerBlue;
             cadastrar.Location = new Point(270, 265);
@@ -77,6 +78,7 @@
             // 
             esqueciSenha.ActiveLinkColor = Color.CornflowerBlue;
             esqueciSenha.AutoSize = true;
+            esqueciSenha.Cursor = Cursors.Hand;
             esqueciSenha.Font = new Font("Segoe UI", 12F);
             esqueciSenha.LinkColor = Color.CornflowerBlue;
             esqueciSenha.Location = new Point(54, 265);
@@ -134,6 +136,7 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.CornflowerBlue;
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatAppearance.BorderColor = Color.CornflowerBlue;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 14F);
@@ -169,6 +172,7 @@
             Padding = new Padding(140, 60, 140, 60);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sua Carteira Em Dia ";
+            FormClosing += FrmLogin_FormClosing;
             Load += FrmLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

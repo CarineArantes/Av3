@@ -1,4 +1,5 @@
-﻿using SuaCarteiraEmDia.Model;
+﻿using SuaCarteiraEmDia.Controller;
+using SuaCarteiraEmDia.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -92,24 +93,25 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void btn_sair_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
             var result = MessageBox.Show(
-               "Deseja sair realmete ?",
-               "Confirmação",
-               MessageBoxButtons.YesNo,
-               MessageBoxIcon.Question,
-               MessageBoxDefaultButton.Button2
+                "Deseja sair realmete ?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2
             );
 
-            // Verifica se o usuário clicou em 'Yes'
-            if (result == DialogResult.No)
+            if (result == DialogResult.Yes)
             {
-                e.Cancel = true; // Cancela o fechamento do formulário
+               Application.Exit();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Usuario usuarioPerfil = UsuarioController.BuscarUsuario(usuario.Id, false);
+            FrmEditarCadastro editarCadastro = new FrmEditarCadastro(usuarioPerfil);
+            editarCadastro.ShowDialog();
         }
     }
 }

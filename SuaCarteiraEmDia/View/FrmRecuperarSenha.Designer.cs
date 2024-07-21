@@ -132,6 +132,7 @@
             // btnRecuperar
             // 
             btnRecuperar.BackColor = Color.CornflowerBlue;
+            btnRecuperar.Cursor = Cursors.Hand;
             btnRecuperar.FlatAppearance.BorderColor = Color.CornflowerBlue;
             btnRecuperar.FlatStyle = FlatStyle.Flat;
             btnRecuperar.Font = new Font("Segoe UI", 14F);

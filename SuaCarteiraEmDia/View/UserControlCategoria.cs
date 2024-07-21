@@ -83,7 +83,7 @@ namespace SuaCarteiraEmDia.View.Principal
             {
 
                 Categoria selecionado = (Categoria)viewCatagorias.SelectedRows[0].DataBoundItem;
-                FrmCategoriaEditar frm = new FrmCategoriaEditar(selecionado.Id, id);
+                FrmEditarCategoria frm = new FrmEditarCategoria(selecionado.Id, id);
                 frm.ShowDialog();
 
 
