@@ -49,21 +49,6 @@ namespace SuaCarteiraEmDia.View.Login
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void senha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (username.Text.Trim().Length <= 0 || senha.Text.Trim().Length <= 0)
@@ -87,13 +72,17 @@ namespace SuaCarteiraEmDia.View.Login
                 }
                
             }
-
-
         }
 
         private void esqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Verificacoes verificacoes = new Verificacoes();
+
+            if (string.IsNullOrWhiteSpace(username.Text))
+            {
+                MessageBox.Show("Por favor, informe o username");
+                return;
+            }
 
             if (!verificacoes.verificarCaracteres(username.Text, 60, 4))
             {

@@ -1,6 +1,6 @@
 ﻿using SuaCarteiraEmDia.Data;
 using SuaCarteiraEmDia.Model;
-using System.Security.Cryptography;
+using SuaCarteiraEmDia.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +11,28 @@ using Microsoft.EntityFrameworkCore;
 namespace SuaCarteiraEmDia.Controller
 {
     public class UsuarioController
-    { 
+    {
+        public static Usuario Login(string username, string senha)
+        {
+            senha = GeraHash.SHA_256(senha);
+            using (DataContext db = new DataContext())
+            {
+                var usuario = db.Usuarios
+                              .FirstOrDefault(u => u.UserName == username && u.Senha == senha && u.Ativo == true);
+
+                if (usuario == null)
+                {
+                    throw new Exception("Usuário ou senha incorreto!");
+                }
+
+                return usuario;
+            }
+        }
+
         public static void Salvar(string nome, string usermame, string senha, string perguntaCadastro, string respostaCadastro)
         {
+            senha = GeraHash.SHA_256(senha);
 
-            senha = GerarHash(senha);
             Usuario NovoUsuario = new()
             {
                 Nome = nome,
@@ -41,7 +58,7 @@ namespace SuaCarteiraEmDia.Controller
 
             try
             {
-                respostaCadastro = GerarHash(respostaCadastro);
+                respostaCadastro = GeraHash.SHA_256(respostaCadastro);
                 PerguntaSeguranca NovaPergunta = new()
                 {
                     Pergunta = perguntaCadastro,
@@ -63,23 +80,6 @@ namespace SuaCarteiraEmDia.Controller
 
         }
 
-        public static Usuario Login(string username, string senha)
-        {
-            senha = GerarHash(senha);
-            using (DataContext db = new DataContext())
-            {
-                var usuario = db.Usuarios
-                              .FirstOrDefault(u => u.UserName == username && u.Senha == senha && u.Ativo == true);
-
-                if (usuario == null)
-                {
-                    throw new Exception("Usuário ou senha incorreto!");
-                }
-
-                return usuario;
-            }
-        }
-
         public static Usuario? BuscarUsuario(string username, bool ativo = false)
         {
             using (DataContext db = new DataContext())
@@ -95,21 +95,28 @@ namespace SuaCarteiraEmDia.Controller
             }
         }
 
-        // Função para gerar o hash SHA-256 de uma string
-        public static string GerarHash(string input)
+        public static bool AlterarSenha(int IDUsuario, string novasenha)
         {
-            using (SHA256 sha256Hash = SHA256.Create())
+            try
             {
-                // Computa o hash SHA-256 da entrada
-                byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(input));
+                novasenha = GeraHash.SHA_256(novasenha);
+                using (DataContext db = new DataContext()) {
 
-                // Converte bytes para string hexadecimal
-                StringBuilder builder = new StringBuilder();
-                for (int i = 0; i < bytes.Length; i++)
-                {
-                    builder.Append(bytes[i].ToString("x2"));
+                    var usuario = db.Usuarios.FirstOrDefault(u => u.Id == IDUsuario);
+                    if (usuario != null)
+                    {
+                        usuario.Senha = novasenha;
+                        db.SaveChanges();
+                    }
+                    else {
+                        return false;
+                    }            
                 }
-                return builder.ToString();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

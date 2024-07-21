@@ -32,6 +32,18 @@ namespace SuaCarteiraEmDia.View.Login
             }
             else
             {
+                if (!verificacoes.verificarCaracteres(nomeCadastro.Text, 60, 3))
+                {
+                    MessageBox.Show("O nome deve conter entre 3 e 60 caracteres");
+                    return;
+                }
+
+                if (!verificacoes.verificarCaracteres(usernameCadastro.Text, 60, 4))
+                {
+                    MessageBox.Show("O username deve conter entre 4 e 60 caracteres");
+                    return;
+                }
+
                 try
                 {
                     Usuario usuario = Controller.UsuarioController.BuscarUsuario(usernameCadastro.Text);
@@ -45,18 +57,6 @@ namespace SuaCarteiraEmDia.View.Login
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                }
-
-                if (!verificacoes.verificarCaracteres(nomeCadastro.Text, 60, 3))
-                {
-                    MessageBox.Show("O nome deve conter entre 3 e 60 caracteres");
-                    return;
-                }
-
-                if (!verificacoes.verificarCaracteres(usernameCadastro.Text, 60, 4))
-                {
-                    MessageBox.Show("O username deve conter entre 4 e 60 caracteres");
-                    return;
                 }
 
                 if (!verificacoes.verificarCaracteres(senhaCadastro.Text, 16, 5))
@@ -81,17 +81,17 @@ namespace SuaCarteiraEmDia.View.Login
                     MessageBox.Show("A resposta deve conter entre 2 e 20 caracteres");
                     return;
                 }
-            }
 
-            try
-            {
-                UsuarioController.Salvar(nomeCadastro.Text, usernameCadastro.Text, senhaCadastro.Text, perguntaCadastro.Text, respostaCadastro.Text);
-                MessageBox.Show("Usuário cadastrado com sucesso!");
-                this.Hide();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    UsuarioController.Salvar(nomeCadastro.Text, usernameCadastro.Text, senhaCadastro.Text, perguntaCadastro.Text, respostaCadastro.Text);
+                    MessageBox.Show("Usuário cadastrado com sucesso!");
+                    this.Hide();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
         }

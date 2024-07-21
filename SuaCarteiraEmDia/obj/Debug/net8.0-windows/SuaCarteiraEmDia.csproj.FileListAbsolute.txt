@@ -819,3 +819,4 @@ C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-win
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.pdb
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.genruntimeconfig.cache
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\ref\SuaCarteiraEmDia.dll
+C:\Users\pedro\Documents\GitHub\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Catagoria.FrmCategoriaEditar.resources

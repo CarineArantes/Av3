@@ -15,17 +15,20 @@ namespace SuaCarteiraEmDia.View.Login
 {
     public partial class FrmRecuperarSenha : Form
     {
-        PerguntaSeguranca perguntaSeguranca;
-        int Idusuario;
+        PerguntaSeguranca ?perguntaSeguranca;
+
+        int IDUsuario { get; }
+
         public FrmRecuperarSenha(int idusuario)
         {
-            Idusuario = idusuario;
+            IDUsuario = idusuario;
+    
             InitializeComponent();
         }
 
         private void FrmRecuperarSenha_Load(object sender, EventArgs e)
         {
-            perguntaSeguranca = PerguntaController.BuscarPergunta(Idusuario);
+            perguntaSeguranca = PerguntaController.BuscarPergunta(IDUsuario);
             pergunta.Text = perguntaSeguranca.Pergunta;
 
         }
@@ -33,21 +36,32 @@ namespace SuaCarteiraEmDia.View.Login
         private void btnRecuperar_Click(object sender, EventArgs e)
         {
             Verificacoes verificacoes = new Verificacoes();
+
             if (!verificacoes.verificarCaracteres(novaSenha.Text, 16, 5))
             {
                 MessageBox.Show("A senha deve conter entre 5 e 16 caracteres");
                 return;
-            }
-            
+            } 
+
             if (novaSenha.Text != confNovaSenha.Text)
             {
                 MessageBox.Show("As senhas não são compatíveis!");
                 return;
             }
 
-            
-
-
+            if (perguntaSeguranca?.Resposta == GeraHash.SHA_256(resposta.Text))
+            {
+                bool alterarSenha = UsuarioController.AlterarSenha(IDUsuario, novaSenha.Text);
+                if (alterarSenha) {
+                    MessageBox.Show("Senha alterada com sucesso !");
+                    this.Hide();
+                    return;
+                }
+                MessageBox.Show("Não foi possivel alterar a senha !");
+            }
+            else {
+                MessageBox.Show("Resposta Invalida !");
+            }
         }
     }
 }

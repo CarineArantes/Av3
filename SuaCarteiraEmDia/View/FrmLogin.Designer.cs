@@ -57,7 +57,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(401, 447);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // cadastrar
             // 
@@ -109,7 +108,6 @@
             senha.Name = "senha";
             senha.Size = new Size(293, 29);
             senha.TabIndex = 2;
-            senha.TextChanged += senha_TextChanged;
             // 
             // username
             // 
@@ -122,7 +120,6 @@
             username.Name = "username";
             username.Size = new Size(293, 29);
             username.TabIndex = 1;
-            username.TextChanged += username_TextChanged;
             // 
             // label2
             // 
