@@ -30,6 +30,7 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel2 = new Panel();
+            label2 = new Label();
             btnRedefinirSenha = new Button();
             groupBox1 = new GroupBox();
             label1 = new Label();
@@ -43,7 +44,6 @@
             usernameCadastro = new TextBox();
             label4 = new Label();
             button1 = new Button();
-            label2 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -83,6 +83,16 @@
             panel2.Size = new Size(729, 358);
             panel2.TabIndex = 0;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(39, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(53, 21);
+            label2.TabIndex = 14;
+            label2.Text = "Nome";
+            // 
             // btnRedefinirSenha
             // 
             btnRedefinirSenha.BackColor = Color.FromArgb(224, 224, 224);
@@ -95,7 +105,7 @@
             btnRedefinirSenha.Margin = new Padding(0);
             btnRedefinirSenha.Name = "btnRedefinirSenha";
             btnRedefinirSenha.Size = new Size(293, 30);
-            btnRedefinirSenha.TabIndex = 13;
+            btnRedefinirSenha.TabIndex = 10;
             btnRedefinirSenha.Text = "Redefinir Senha";
             btnRedefinirSenha.UseVisualStyleBackColor = false;
             btnRedefinirSenha.Click += btnRedefinirSenha_Click;
@@ -138,7 +148,7 @@
             novaSenha.Margin = new Padding(0);
             novaSenha.Name = "novaSenha";
             novaSenha.Size = new Size(293, 29);
-            novaSenha.TabIndex = 20;
+            novaSenha.TabIndex = 6;
             // 
             // label7
             // 
@@ -159,7 +169,7 @@
             confNovaSenha.Margin = new Padding(0);
             confNovaSenha.Name = "confNovaSenha";
             confNovaSenha.Size = new Size(293, 29);
-            confNovaSenha.TabIndex = 17;
+            confNovaSenha.TabIndex = 7;
             // 
             // label3
             // 
@@ -180,7 +190,7 @@
             senhaAtual.Margin = new Padding(0);
             senhaAtual.Name = "senhaAtual";
             senhaAtual.Size = new Size(293, 29);
-            senhaAtual.TabIndex = 16;
+            senhaAtual.TabIndex = 5;
             // 
             // button2
             // 
@@ -194,7 +204,7 @@
             button2.Margin = new Padding(0);
             button2.Name = "button2";
             button2.Size = new Size(162, 36);
-            button2.TabIndex = 11;
+            button2.TabIndex = 15;
             button2.Text = "Desativar Conta";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
@@ -245,20 +255,10 @@
             button1.Margin = new Padding(0);
             button1.Name = "button1";
             button1.Size = new Size(117, 36);
-            button1.TabIndex = 10;
+            button1.TabIndex = 3;
             button1.Text = "Salvar Alterações";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(39, 65);
-            label2.Name = "label2";
-            label2.Size = new Size(53, 21);
-            label2.TabIndex = 14;
-            label2.Text = "Nome";
             // 
             // FrmEditarCadastro
             // 

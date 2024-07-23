@@ -799,7 +799,6 @@ C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-win
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.Properties.Resources.resources
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Login.FrmCadastro.resources
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Catagoria.FormCategoria.resources
-C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Catagoria.FrmCategoriaEditar.resources
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Login.FrmLogin.resources
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Principal.FrmPrincipal.resources
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Login.FrmRecuperarSenha.resources
@@ -821,3 +820,5 @@ C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-win
 C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\ref\SuaCarteiraEmDia.dll
 C:\Users\pedro\Documents\GitHub\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.FrmEditarCadastro.resources
 C:\Users\pedro\Documents\GitHub\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Catagoria.FrmEditarCategoria.resources
+C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.FrmEditarCadastro.resources
+C:\Users\carin\OneDrive\Documentos\Av3\Av3\SuaCarteiraEmDia\obj\Debug\net8.0-windows\SuaCarteiraEmDia.View.Catagoria.FrmEditarCategoria.resources

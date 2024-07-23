@@ -24,6 +24,13 @@ namespace SuaCarteiraEmDia.View.Login
             IDUsuario = idusuario;
     
             InitializeComponent();
+            ConfigurarCamposDeSenha();
+        }
+
+        private void ConfigurarCamposDeSenha()
+        {
+            novaSenha.UseSystemPasswordChar = true;
+            confNovaSenha.UseSystemPasswordChar = true;
         }
 
         private void FrmRecuperarSenha_Load(object sender, EventArgs e)

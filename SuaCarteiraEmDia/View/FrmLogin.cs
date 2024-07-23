@@ -21,8 +21,14 @@ namespace SuaCarteiraEmDia.View.Login
         public FrmLogin()
         {
             InitializeComponent();
-
+            ConfigurarCamposDeSenha();
         }
+        
+        private void ConfigurarCamposDeSenha()
+        {
+            senha.UseSystemPasswordChar = true;
+        }
+
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {

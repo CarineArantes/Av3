@@ -22,10 +22,17 @@ namespace SuaCarteiraEmDia.View
         public FrmEditarCadastro(Usuario usuario)
         {
             InitializeComponent();
+            ConfigurarCamposDeSenha();
             this.usuario = usuario;
             nomeCadastro.Text = usuario.Nome;
             usernameCadastro.Text = usuario.UserName;
+        }
 
+        private void ConfigurarCamposDeSenha()
+        {
+            senhaAtual.UseSystemPasswordChar = true;
+            novaSenha.UseSystemPasswordChar = true;
+            confNovaSenha.UseSystemPasswordChar = true;
         }
 
         private void btnRedefinirSenha_Click(object sender, EventArgs e)
