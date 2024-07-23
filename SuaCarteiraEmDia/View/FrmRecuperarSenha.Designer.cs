@@ -30,14 +30,14 @@
         {
             tableLayoutPanel1 = new TableLayoutPanel();
             panel1 = new Panel();
-            textBox2 = new TextBox();
+            confNovaSenha = new TextBox();
             label4 = new Label();
-            textBox1 = new TextBox();
+            novaSenha = new TextBox();
             label3 = new Label();
-            senha = new TextBox();
-            btnLogin = new Button();
+            resposta = new TextBox();
+            btnRecuperar = new Button();
             label2 = new Label();
-            label1 = new Label();
+            pergunta = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -63,29 +63,29 @@
             // panel1
             // 
             panel1.BackColor = Color.WhiteSmoke;
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(confNovaSenha);
             panel1.Controls.Add(label4);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(novaSenha);
             panel1.Controls.Add(label3);
-            panel1.Controls.Add(senha);
-            panel1.Controls.Add(btnLogin);
+            panel1.Controls.Add(resposta);
+            panel1.Controls.Add(btnRecuperar);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pergunta);
             panel1.Location = new Point(73, 60);
             panel1.Name = "panel1";
             panel1.Size = new Size(429, 418);
             panel1.TabIndex = 0;
             // 
-            // textBox2
+            // confNovaSenha
             // 
-            textBox2.BackColor = Color.WhiteSmoke;
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(41, 301);
-            textBox2.Margin = new Padding(0);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(293, 29);
-            textBox2.TabIndex = 10;
+            confNovaSenha.BackColor = Color.WhiteSmoke;
+            confNovaSenha.BorderStyle = BorderStyle.FixedSingle;
+            confNovaSenha.Font = new Font("Segoe UI", 12F);
+            confNovaSenha.Location = new Point(41, 301);
+            confNovaSenha.Margin = new Padding(0);
+            confNovaSenha.Name = "confNovaSenha";
+            confNovaSenha.Size = new Size(293, 29);
+            confNovaSenha.TabIndex = 3;
             // 
             // label4
             // 
@@ -97,16 +97,16 @@
             label4.TabIndex = 9;
             label4.Text = "Confirme a senha";
             // 
-            // textBox1
+            // novaSenha
             // 
-            textBox1.BackColor = Color.WhiteSmoke;
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(41, 223);
-            textBox1.Margin = new Padding(0);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(293, 29);
-            textBox1.TabIndex = 8;
+            novaSenha.BackColor = Color.WhiteSmoke;
+            novaSenha.BorderStyle = BorderStyle.FixedSingle;
+            novaSenha.Font = new Font("Segoe UI", 12F);
+            novaSenha.Location = new Point(41, 223);
+            novaSenha.Margin = new Padding(0);
+            novaSenha.Name = "novaSenha";
+            novaSenha.Size = new Size(293, 29);
+            novaSenha.TabIndex = 2;
             // 
             // label3
             // 
@@ -118,32 +118,33 @@
             label3.TabIndex = 7;
             label3.Text = "Nova senha";
             // 
-            // senha
+            // resposta
             // 
-            senha.BackColor = Color.WhiteSmoke;
-            senha.BorderStyle = BorderStyle.FixedSingle;
-            senha.Font = new Font("Segoe UI", 12F);
-            senha.Location = new Point(41, 137);
-            senha.Margin = new Padding(0);
-            senha.Name = "senha";
-            senha.Size = new Size(293, 29);
-            senha.TabIndex = 6;
+            resposta.BackColor = Color.WhiteSmoke;
+            resposta.BorderStyle = BorderStyle.FixedSingle;
+            resposta.Font = new Font("Segoe UI", 12F);
+            resposta.Location = new Point(41, 137);
+            resposta.Margin = new Padding(0);
+            resposta.Name = "resposta";
+            resposta.Size = new Size(293, 29);
+            resposta.TabIndex = 1;
             // 
-            // btnLogin
+            // btnRecuperar
             // 
-            btnLogin.BackColor = Color.CornflowerBlue;
-            btnLogin.FlatAppearance.BorderColor = Color.CornflowerBlue;
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 14F);
-            btnLogin.ForeColor = SystemColors.ControlLightLight;
-            btnLogin.Location = new Point(132, 359);
-            btnLogin.Margin = new Padding(0);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(144, 35);
-            btnLogin.TabIndex = 5;
-            btnLogin.Text = "Redefinir";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
+            btnRecuperar.BackColor = Color.CornflowerBlue;
+            btnRecuperar.Cursor = Cursors.Hand;
+            btnRecuperar.FlatAppearance.BorderColor = Color.CornflowerBlue;
+            btnRecuperar.FlatStyle = FlatStyle.Flat;
+            btnRecuperar.Font = new Font("Segoe UI", 14F);
+            btnRecuperar.ForeColor = SystemColors.ControlLightLight;
+            btnRecuperar.Location = new Point(132, 359);
+            btnRecuperar.Margin = new Padding(0);
+            btnRecuperar.Name = "btnRecuperar";
+            btnRecuperar.Size = new Size(144, 35);
+            btnRecuperar.TabIndex = 4;
+            btnRecuperar.Text = "Redefinir";
+            btnRecuperar.UseVisualStyleBackColor = false;
+            btnRecuperar.Click += btnRecuperar_Click;
             // 
             // label2
             // 
@@ -155,16 +156,15 @@
             label2.TabIndex = 3;
             label2.Text = "Resposta";
             // 
-            // label1
+            // pergunta
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(41, 50);
-            label1.Name = "label1";
-            label1.Size = new Size(72, 21);
-            label1.TabIndex = 2;
-            label1.Text = "Pergunta";
-            label1.Click += label1_Click;
+            pergunta.AutoSize = true;
+            pergunta.Font = new Font("Segoe UI", 12F);
+            pergunta.Location = new Point(41, 50);
+            pergunta.Name = "pergunta";
+            pergunta.Size = new Size(72, 21);
+            pergunta.TabIndex = 2;
+            pergunta.Text = "Pergunta";
             // 
             // FrmRecuperarSenha
             // 
@@ -176,6 +176,7 @@
             Name = "FrmRecuperarSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Recuperar senha";
+            Load += FrmRecuperarSenha_Load;
             tableLayoutPanel1.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -187,12 +188,12 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panel1;
         private Label label2;
-        private Label label1;
-        private Button btnLogin;
-        private TextBox senha;
-        private TextBox textBox2;
+        private Label pergunta;
+        private Button btnRecuperar;
+        private TextBox resposta;
+        private TextBox confNovaSenha;
         private Label label4;
-        private TextBox textBox1;
+        private TextBox novaSenha;
         private Label label3;
     }
 }

@@ -57,12 +57,12 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(401, 447);
             panel1.TabIndex = 0;
-            panel1.Paint += panel1_Paint;
             // 
             // cadastrar
             // 
             cadastrar.ActiveLinkColor = Color.CornflowerBlue;
             cadastrar.AutoSize = true;
+            cadastrar.Cursor = Cursors.Hand;
             cadastrar.Font = new Font("Segoe UI", 12F);
             cadastrar.LinkColor = Color.CornflowerBlue;
             cadastrar.Location = new Point(270, 265);
@@ -78,6 +78,7 @@
             // 
             esqueciSenha.ActiveLinkColor = Color.CornflowerBlue;
             esqueciSenha.AutoSize = true;
+            esqueciSenha.Cursor = Cursors.Hand;
             esqueciSenha.Font = new Font("Segoe UI", 12F);
             esqueciSenha.LinkColor = Color.CornflowerBlue;
             esqueciSenha.Location = new Point(54, 265);
@@ -108,8 +109,7 @@
             senha.Margin = new Padding(0);
             senha.Name = "senha";
             senha.Size = new Size(293, 29);
-            senha.TabIndex = 4;
-            senha.TextChanged += senha_TextChanged;
+            senha.TabIndex = 2;
             // 
             // username
             // 
@@ -121,8 +121,7 @@
             username.Margin = new Padding(0);
             username.Name = "username";
             username.Size = new Size(293, 29);
-            username.TabIndex = 3;
-            username.TextChanged += username_TextChanged;
+            username.TabIndex = 1;
             // 
             // label2
             // 
@@ -137,6 +136,7 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.CornflowerBlue;
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatAppearance.BorderColor = Color.CornflowerBlue;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 14F);
@@ -145,7 +145,7 @@
             btnLogin.Margin = new Padding(0);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(293, 44);
-            btnLogin.TabIndex = 0;
+            btnLogin.TabIndex = 3;
             btnLogin.Text = "Acessar";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += button1_Click;
@@ -172,6 +172,7 @@
             Padding = new Padding(140, 60, 140, 60);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sua Carteira Em Dia ";
+            FormClosing += FrmLogin_FormClosing;
             Load += FrmLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
