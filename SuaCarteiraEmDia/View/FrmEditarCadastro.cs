@@ -38,7 +38,7 @@ namespace SuaCarteiraEmDia.View
             else
             {
                 groupBox1.Enabled = false;
-                senhaAtual.Text = "***********************************************************************";
+                senhaAtual.Text = "";
                 novaSenha.Text = "";
                 confNovaSenha.Text = "";
             }
@@ -46,7 +46,7 @@ namespace SuaCarteiraEmDia.View
             redefinirSenha = !redefinirSenha;
             if (redefinirSenha)
             {
-                btnRedefinirSenha.Text = "Cancelar Redefinição de Senha";
+                btnRedefinirSenha.Text = "Cancelar redefinição de senha";
             }
             else
             {
@@ -85,24 +85,24 @@ namespace SuaCarteiraEmDia.View
                 }
                 if (GeraHash.SHA_256(senhaAtual.Text) != usuario.Senha)
                 {
-                    MessageBox.Show("Senha Atual Incorreta!");
+                    MessageBox.Show("Senha atual incorreta!");
                     return;
                 }
             }
             bool usuarioAlterado = UsuarioController.Editar(usuario.Id, nomeCadastro.Text, usernameCadastro.Text, (redefinirSenha) ? novaSenha.Text : null);
             if (usuarioAlterado)
             {
-                MessageBox.Show("Usuario alterado com sucesso !");
+                MessageBox.Show("Usuário alterado com sucesso!");
                 this.Close();
                 return;
             }
-            MessageBox.Show("Não foi possivel alterar usuario !");
+            MessageBox.Show("Não foi possível alterar usuário!");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(
-                "Deseja realmete desativer sua conta ?",
+                "Deseja realmente desativar sua conta?",
                 "Confirmação",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question,
@@ -114,12 +114,12 @@ namespace SuaCarteiraEmDia.View
                bool usuarioDesativado = UsuarioController.Desativar(usuario.Id);
                if (usuarioDesativado)
                {
-                    MessageBox.Show("Usuario desativado com sucesso ! \n O programa será encerrado.");
+                    MessageBox.Show("Usuário desativado com sucesso! \n O programa será encerrado.");
                     Application.Exit();
 
                     return;
                }
-                MessageBox.Show("Não foi possivel desativar o usuario no momento !");
+                MessageBox.Show("Não foi possível desativar o usuário no momento!");
 
             }
         }

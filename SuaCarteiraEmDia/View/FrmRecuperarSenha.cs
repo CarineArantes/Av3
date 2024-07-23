@@ -53,14 +53,14 @@ namespace SuaCarteiraEmDia.View.Login
             {
                 bool alterarSenha = UsuarioController.AlterarSenha(IDUsuario, novaSenha.Text);
                 if (alterarSenha) {
-                    MessageBox.Show("Senha alterada com sucesso !");
+                    MessageBox.Show("Senha alterada com sucesso!");
                     this.Hide();
                     return;
                 }
-                MessageBox.Show("Não foi possivel alterar a senha !");
+                MessageBox.Show("Não foi possível alterar a senha!");
             }
             else {
-                MessageBox.Show("Resposta Invalida !");
+                MessageBox.Show("Resposta Inválida!");
             }
         }
     }

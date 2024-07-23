@@ -94,7 +94,7 @@ namespace SuaCarteiraEmDia.View.Principal
         private void btn_sair_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show(
-                "Deseja sair realmete ?",
+                "Deseja realmete sair?",
                 "Confirmação",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question,

@@ -43,6 +43,7 @@
             usernameCadastro = new TextBox();
             label4 = new Label();
             button1 = new Button();
+            label2 = new Label();
             tableLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -69,6 +70,7 @@
             // panel2
             // 
             panel2.BackColor = Color.WhiteSmoke;
+            panel2.Controls.Add(label2);
             panel2.Controls.Add(btnRedefinirSenha);
             panel2.Controls.Add(groupBox1);
             panel2.Controls.Add(button2);
@@ -179,7 +181,6 @@
             senhaAtual.Name = "senhaAtual";
             senhaAtual.Size = new Size(293, 29);
             senhaAtual.TabIndex = 16;
-            senhaAtual.Text = "***********************************************************************";
             // 
             // button2
             // 
@@ -189,10 +190,10 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(39, 303);
+            button2.Location = new Point(39, 302);
             button2.Margin = new Padding(0);
             button2.Name = "button2";
-            button2.Size = new Size(293, 36);
+            button2.Size = new Size(162, 36);
             button2.TabIndex = 11;
             button2.Text = "Desativar Conta";
             button2.UseVisualStyleBackColor = false;
@@ -204,7 +205,7 @@
             nomeCadastro.BorderStyle = BorderStyle.FixedSingle;
             nomeCadastro.Font = new Font("Segoe UI", 12F);
             nomeCadastro.ForeColor = Color.Black;
-            nomeCadastro.Location = new Point(39, 72);
+            nomeCadastro.Location = new Point(39, 95);
             nomeCadastro.Margin = new Padding(0);
             nomeCadastro.Name = "nomeCadastro";
             nomeCadastro.Size = new Size(293, 29);
@@ -216,7 +217,7 @@
             usernameCadastro.BorderStyle = BorderStyle.FixedSingle;
             usernameCadastro.Font = new Font("Segoe UI", 12F);
             usernameCadastro.ForeColor = Color.Black;
-            usernameCadastro.Location = new Point(39, 139);
+            usernameCadastro.Location = new Point(39, 162);
             usernameCadastro.Margin = new Padding(0);
             usernameCadastro.Name = "usernameCadastro";
             usernameCadastro.Size = new Size(293, 29);
@@ -226,7 +227,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(39, 110);
+            label4.Location = new Point(39, 133);
             label4.Name = "label4";
             label4.Size = new Size(81, 21);
             label4.TabIndex = 6;
@@ -240,7 +241,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 14F);
             button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(39, 189);
+            button1.Location = new Point(135, 212);
             button1.Margin = new Padding(0);
             button1.Name = "button1";
             button1.Size = new Size(117, 36);
@@ -248,6 +249,16 @@
             button1.Text = "Salvar Alterações";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F);
+            label2.Location = new Point(39, 65);
+            label2.Name = "label2";
+            label2.Size = new Size(53, 21);
+            label2.TabIndex = 14;
+            label2.Text = "Nome";
             // 
             // FrmEditarCadastro
             // 
@@ -284,5 +295,6 @@
         private Label label3;
         private TextBox senhaAtual;
         private Button btnRedefinirSenha;
+        private Label label2;
     }
 }
