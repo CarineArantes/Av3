@@ -1,4 +1,5 @@
-﻿using SuaCarteiraEmDia.Model;
+﻿using SuaCarteiraEmDia.Controller;
+using SuaCarteiraEmDia.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,12 @@ namespace SuaCarteiraEmDia.View.Principal
     public partial class UserControlCardMovimentacao : UserControl
     {
         Movimentacao Movimentacao;
-        public UserControlCardMovimentacao(Movimentacao movimentacao)
+        Action Action;
+        public UserControlCardMovimentacao(Movimentacao movimentacao, Action action)
         {
             InitializeComponent();
             this.Movimentacao = movimentacao;
+            this.Action = action;
         }
 
         private void UserControlCardMovimentacao_Load(object sender, EventArgs e)
@@ -46,5 +49,35 @@ namespace SuaCarteiraEmDia.View.Principal
             }
             pictureBox.Image = img;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show(
+                "Deseja realmete excluir está movimentação ?",
+                "Confirmação",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question,
+                MessageBoxDefaultButton.Button2
+            );
+
+            if (result == DialogResult.Yes)
+            {
+                bool desativado = MovimentacaoController.Desativar(Movimentacao.Id);
+                if (desativado)
+                {
+                    MessageBox.Show("Movimentação excluida com sucesso !");
+                    Action();
+                    return;
+                }
+                MessageBox.Show("Erro ao excluida movimentação !");
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FrmMovimentacao editarMovimentacao = new FrmMovimentacao(Movimentacao.UsuarioID, Movimentacao, () => Action());
+            editarMovimentacao.Show();
+        }
+
     }
 }

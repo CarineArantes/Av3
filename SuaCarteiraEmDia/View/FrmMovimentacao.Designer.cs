@@ -183,7 +183,6 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.Size = new Size(584, 22);
             tableLayoutPanel3.TabIndex = 0;
-            tableLayoutPanel3.Paint += tableLayoutPanel3_Paint;
             // 
             // label3
             // 

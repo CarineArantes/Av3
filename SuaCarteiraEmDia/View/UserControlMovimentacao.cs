@@ -27,11 +27,11 @@ namespace SuaCarteiraEmDia.View.Principal
         {
             flowLayou1.Controls.Clear();
             List<Movimentacao> movimentacoes = MovimentacaoController.Busca(IDUsuario, dateTimePicker1.Value.Date);
-            if (movimentacoes.Count > 1)
+            if (movimentacoes.Count > 0)
             {
                 foreach (Movimentacao movimentacao in movimentacoes)
                 {
-                    flowLayou1.Controls.Add(new UserControlCardMovimentacao(movimentacao));
+                    flowLayou1.Controls.Add(new UserControlCardMovimentacao(movimentacao, () => BuscaDados()));
                 }
             }
 
