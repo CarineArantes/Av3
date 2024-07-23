@@ -28,6 +28,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="View\FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\UserControlCardMovimentacao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\UserControlCategoria.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="View\UserControlMovimentacao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

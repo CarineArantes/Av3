@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iaQp+rYomcFc9fZpOOEUHjZiEyhgTEc3aLok5Ay1lYZXwzY7BkE2Wygs4BMKO2izsDjViY+dHltdwuOswNNDUw==",
+  "dgSpecHash": "723v381yO9PAjlg+vnfUsEr/8B176Se/Kp09mNQ8otWdKDE9sbEiNZoUHsuoG8T83eVE8OOv5vwLwnmjVWuHCA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ALUNO\\Desktop\\Av3-main\\Av3-main\\SuaCarteiraEmDia\\SuaCarteiraEmDia.csproj",
+  "projectFilePath": "C:\\Users\\ALUNO\\Desktop\\Av3\\SuaCarteiraEmDia\\SuaCarteiraEmDia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ALUNO\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\ALUNO\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -1,5 +1,5 @@
+using SuaCarteiraEmDia.View;
 using SuaCarteiraEmDia.View.Login;
-using SuaCarteiraEmDia.View.Principal;
 
 namespace SuaCarteiraEmDia
 {

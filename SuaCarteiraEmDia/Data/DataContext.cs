@@ -14,8 +14,8 @@ namespace SuaCarteiraEmDia.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             //faculdade ==> LABBPC09\\SQLSERVER2014ECE
-            string DataSource = "DESKTOP"; 
-            optionsBuilder.UseSqlServer($"Data Source=LABBPC03\\SQLSERVER2014ECE; Initial Catalog=DBSuaCarteiraEmDia; Integrated Security=SSPI; Trust Server Certificate=True");
+            string DataSource = "LABBPC03\\SQLSERVER2014ECE"; 
+            optionsBuilder.UseSqlServer($"Data Source={DataSource}; Initial Catalog=DBSuaCarteiraEmDia; Integrated Security=SSPI; Trust Server Certificate=True");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

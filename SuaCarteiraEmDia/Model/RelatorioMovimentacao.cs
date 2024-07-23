@@ -13,7 +13,7 @@ namespace SuaCarteiraEmDia.Model
         public string Descricao;
         public DateTime DataMovimentacao;
         public string Categoria;
-          public int IDCategoria;
+         public int IDCategoria;
 
 
     }

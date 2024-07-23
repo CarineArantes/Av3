@@ -13,11 +13,11 @@ namespace SuaCarteiraEmDia.Model
 
 
         [Required, MaxLength(100)]
-        public required string Nome { get; set; }
+        public string Nome { get; set; }
 
 
         [Required, MaxLength(7)]
-        public required string Cor { get; set; }
+        public string Cor { get; set; }
 
 
         [Required]
@@ -29,12 +29,12 @@ namespace SuaCarteiraEmDia.Model
 
 
         [Required]
-        public  bool Ativo { get; set; } = true;
+        public bool Ativo { get; set; } = true;
 
 
 
         [Required]
-        public required int UsuarioID { get; set; }
+        public int UsuarioID { get; set; }
 
 
         public Usuario? Usuario { get; set; }
