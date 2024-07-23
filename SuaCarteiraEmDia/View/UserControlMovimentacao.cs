@@ -29,7 +29,8 @@ namespace SuaCarteiraEmDia.View.Principal
             List<Movimentacao> movimentacoes = MovimentacaoController.Busca(IDUsuario, dateTimePicker1.Value.Date);
             if (movimentacoes.Count > 1)
             {
-                foreach (Movimentacao movimentacao in movimentacoes) {
+                foreach (Movimentacao movimentacao in movimentacoes)
+                {
                     flowLayou1.Controls.Add(new UserControlCardMovimentacao(movimentacao));
                 }
             }
@@ -41,7 +42,7 @@ namespace SuaCarteiraEmDia.View.Principal
 
             textBoxSaldoCarteira.Text = totalCarteira.ToString();
             textBoxEntrada.Text = totalEntrada.ToString();
-            textBoxSaida.Text = totalSaida.ToString(); 
+            textBoxSaida.Text = totalSaida.ToString();
             textBoxSaldoDia.Text = (totalEntrada - totalSaida).ToString();
         }
 
@@ -54,6 +55,12 @@ namespace SuaCarteiraEmDia.View.Principal
         private void buttonBuscar_Click(object sender, EventArgs e)
         {
             BuscaDados();
+        }
+
+        private void btnNovaMovimentacao_Click(object sender, EventArgs e)
+        {
+            FrmMovimentacao novaMovimentacao = new FrmMovimentacao(IDUsuario, ()=> BuscaDados());
+            novaMovimentacao.Show();
         }
     }
 }
