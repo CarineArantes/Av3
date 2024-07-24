@@ -13,16 +13,17 @@ using System.Windows.Forms;
 
 namespace SuaCarteiraEmDia.View.Catagoria
 {
-    
+
     public partial class FormCategoria : Form
     {
         int id;
         string cor = "";
 
-        public FormCategoria(int ?iduser)
+        UserControlCategoria formCategoria;
+        public FormCategoria(int? iduser, UserControlCategoria c)
         {
             id = (int)iduser;
-           
+            formCategoria = c;
             InitializeComponent();
         }
 
@@ -46,11 +47,11 @@ namespace SuaCarteiraEmDia.View.Catagoria
 
                 Color color = ColorTranslator.FromHtml(hexColor);
 
-             
-                txtCor.BackColor = color; 
+
+                txtCor.BackColor = color;
                 txtCorHexadecimal.Text = hexColor.ToString();
                 cor = hexColor.ToString();
-                
+
             }
 
 
@@ -58,15 +59,15 @@ namespace SuaCarteiraEmDia.View.Catagoria
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (txtNomCategoria.Text.Trim()=="")
+            if (txtNomCategoria.Text.Trim() == "")
             {
-                MessageBox.Show("Digite um nome para a categoria", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Digite um nome para a categoria!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (txtCorHexadecimal.Text.Trim() == "")
             {
-                MessageBox.Show("Selecione uma cor para a categoria", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecione uma cor para a categoria!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
@@ -79,7 +80,7 @@ namespace SuaCarteiraEmDia.View.Catagoria
                 CategoriaController.CriarCategoria(txtNomCategoria.Text, cor, id);
 
 
-                MessageBox.Show("Categoria cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Categoria cadastrada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -87,8 +88,18 @@ namespace SuaCarteiraEmDia.View.Catagoria
 
             }
 
-
+            formCategoria.PopularGrid("Ativos");
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCor_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

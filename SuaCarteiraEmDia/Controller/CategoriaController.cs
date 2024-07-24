@@ -36,6 +36,19 @@ namespace SuaCarteiraEmDia.Controller
                 return;
             }
 
+
+            if (categoria.Nome.Trim().Length>100)
+            {
+                throw new Exception("O nome da categoria teve ter no maximo 100 caracteres");
+                return;
+            }
+
+
+            if (categoria.Cor.Trim().Length > 7)
+            {
+                throw new Exception("A cor da categoria deve ter no máximo 7 caracteres em hexadecimal");
+                return;
+            }
             using (DataContext db = new DataContext())
             {
                 if (db.Categorias.Any(x => x.Nome.ToLower() == categoria.Nome.ToLower() && x.UsuarioID == idUsuario))

@@ -21,8 +21,8 @@ namespace SuaCarteiraEmDia.View.Principal
         int id;
 
 
-      
-        
+
+
         public UserControlCategoria(int? idUser)
         {
             id = (int)idUser;
@@ -30,7 +30,7 @@ namespace SuaCarteiraEmDia.View.Principal
 
         }
 
-        
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -38,7 +38,7 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void UserControlCategoria_Load(object sender, EventArgs e)
         {
-            listCategorias = CategoriaController.listarCategorias("Ativos", 1);
+            listCategorias = CategoriaController.listarCategorias("Ativos", id);
 
             viewCatagorias.DataSource = listCategorias;
         }
@@ -63,18 +63,26 @@ namespace SuaCarteiraEmDia.View.Principal
 
         public void PopularGrid(string ativos)
         {
-            listCategorias = CategoriaController.listarCategorias(ativos, 1);
+            listCategorias = CategoriaController.listarCategorias(ativos, id);
 
             viewCatagorias.DataSource = listCategorias;
 
+            for (int i = 0; i < listCategorias.Count; i++)
+            {
+
+                Color color = ColorTranslator.FromHtml(listCategorias[i].Cor);
+                viewCatagorias.Rows[i].Cells[2].Style.BackColor = color;
+                viewCatagorias.Rows[i].Cells[2].Style.ForeColor = color;
+
+            }
 
         }
 
-   
+
 
         private void novaToolStripButton_Click(object sender, EventArgs e)
         {
-             new FormCategoria(id).Show();
+            new FormCategoria(id, this).Show();
         }
 
         private void abrirToolStripButton_Click(object sender, EventArgs e)
@@ -83,9 +91,9 @@ namespace SuaCarteiraEmDia.View.Principal
             {
 
                 Categoria selecionado = (Categoria)viewCatagorias.SelectedRows[0].DataBoundItem;
-                FrmCategoriaEditar frm = new FrmCategoriaEditar(selecionado.Id, id);
+                FrmEditarCategoria frm = new FrmEditarCategoria(selecionado.Id, id, this);
                 frm.ShowDialog();
-
+               
 
 
             }
@@ -98,7 +106,7 @@ namespace SuaCarteiraEmDia.View.Principal
                 Categoria selecionado = (Categoria)viewCatagorias.SelectedRows[0].DataBoundItem;
 
                 DialogResult resposta = MessageBox.Show(
-                    $"Deseja realmente excluir o livro '{selecionado.Nome}' ?",
+                    $"Deseja realmente excluir a categoria selecionada: '{selecionado.Nome}' ?",
                     "",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question,
@@ -114,15 +122,17 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void viewCatagorias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            for (int i = 0; i < listCategorias.Count; i++)
-            {
-       
-                Color color = ColorTranslator.FromHtml(listCategorias[i].Cor);
-                viewCatagorias.Rows[i].Cells[2].Style.BackColor = color;
-                viewCatagorias.Rows[i].Cells[2].Style.ForeColor = color;
-                ;
+            
+        }
 
-            }
+        private void viewCatagorias_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

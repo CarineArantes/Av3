@@ -13,18 +13,19 @@ using System.Windows.Forms;
 
 namespace SuaCarteiraEmDia.View.Catagoria
 {
-    public partial class FrmCategoriaEditar : Form
+    public partial class FrmEditarCategoria : Form
     {
         int? idUsuario;
         int? IdAtual = null;
         DateTime? dataCricao = null;
         string cor = "";
-        public FrmCategoriaEditar(int id, int? iduser)
+        UserControlCategoria formCategoria;
+        public FrmEditarCategoria(int id, int? iduser, UserControlCategoria c )
         {
             InitializeComponent();
             idUsuario = iduser;
             IdAtual = id;
-
+            formCategoria = c;
             Categoria categoria = CategoriaController.PesquisarCategoria(new Categoria() { Id = id });
             dataCricao = categoria.DataCriacao;
 
@@ -43,7 +44,7 @@ namespace SuaCarteiraEmDia.View.Catagoria
             }
             else
             {
-                MessageBox.Show("Selecione outra categoria, essa não existe");
+                MessageBox.Show("Selecione outra categoria, essa não existe!");
             }
         }
 
@@ -52,13 +53,13 @@ namespace SuaCarteiraEmDia.View.Catagoria
         {
             if (txtNomCategoria.Text.Trim() == "")
             {
-                MessageBox.Show("Digite um nome para a categoria", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Digite um nome para a categoria!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
             if (txtCorHexadecimal.Text.Trim() == "")
             {
-                MessageBox.Show("Selecione uma cor para a categoria", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecione uma cor para a categoria!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
 
             }
@@ -84,7 +85,7 @@ namespace SuaCarteiraEmDia.View.Catagoria
 
                 CategoriaController.Atualizar(categoria);
 
-                MessageBox.Show("Categoria cadastrada com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Categoria editada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
             catch (Exception ex)
@@ -93,7 +94,7 @@ namespace SuaCarteiraEmDia.View.Catagoria
             }
 
 
-
+            formCategoria.PopularGrid("Ativos");
             this.Close();
         }
 

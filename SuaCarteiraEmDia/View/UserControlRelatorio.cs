@@ -40,6 +40,8 @@ namespace SuaCarteiraEmDia.View.Principal
 
         private void UserControlRelatorio_Load(object sender, EventArgs e)
         {
+            somaEntrada = 0;
+            somaSaida = 0;
             dateTimePicker1.MaxDate = DateTime.Now;
             dateTimePicker2.MaxDate = DateTime.Now;
 
@@ -47,13 +49,11 @@ namespace SuaCarteiraEmDia.View.Principal
             checkedListBox1.Items.Clear();
             checkedListBox1.Enabled = false;
 
-            List<Categoria> categorias = CategoriaController.listarCategorias("Todos",IDUser);
+            List<Categoria> categorias = CategoriaController.listarCategorias("Todos", IDUser);
 
-            // Defina as propriedades DisplayMember e ValueMember
             checkedListBox1.DisplayMember = "Nome";
             checkedListBox1.ValueMember = "Id";
 
-            // Adicione as categorias ao CheckedListBox
             foreach (var categoria in categorias)
             {
                 checkedListBox1.Items.Add(categoria);
@@ -68,15 +68,20 @@ namespace SuaCarteiraEmDia.View.Principal
 
             EstiloRelatorio er = new EstiloRelatorio();
             er.Colunas(dataGridView1);
+            
             er.PopularGrid(dataGridView1, rel);
             er.PintarCategoria(dataGridView1, rel);
 
             somaTotal = RelatorioController.SomaTotal(rel);
+            somaEntrada = RelatorioController.SomaTipo(rel, "E");
+            somaSaida = RelatorioController.SomaTipo(rel, "S");
 
-            somaTotal = somaTotal < 0 ? somaTotal * -1 : somaTotal;
+            txtTotal.Text = somaTotal.ToString();
+            txtEntrada.Text = somaEntrada.ToString();
+            txtSaida.Text = somaSaida.ToString();
 
 
-            label1.Text = "Soma total: " + somaTotal.ToString();
+
 
 
 
@@ -85,7 +90,8 @@ namespace SuaCarteiraEmDia.View.Principal
         private void button1_Click(object sender, EventArgs e)
         {
             somaTotal = 0;
-
+            somaEntrada = 0;
+            somaSaida = 0;
             DateTime dataInicio = dateTimePicker1.Value;
             DateTime dataFinal = dateTimePicker2.Value;
 
@@ -119,7 +125,7 @@ namespace SuaCarteiraEmDia.View.Principal
                 return;
             }
 
-            rel = RelatorioController.GetRelatorios(1, dataInicio, dataFinal);
+            rel = RelatorioController.GetRelatorios(IDUser, dataInicio, dataFinal);
 
             if (radioButton2.Checked)
             {
@@ -137,22 +143,21 @@ namespace SuaCarteiraEmDia.View.Principal
             {
                 rel = RelatorioController.FiltrarTiposMovimentacoes(rel, PegarValorRadio(tiposMovimentacoes));
 
-                
-                
+
+
             }
 
             somaTotal = RelatorioController.SomaTotal(rel);
-
+            somaEntrada = RelatorioController.SomaTipo(rel, "E");
+            somaSaida = RelatorioController.SomaTipo(rel, "S");
 
 
             EstiloRelatorio er = new EstiloRelatorio();
             er.PopularGrid(dataGridView1, rel);
 
-            somaTotal = somaTotal < 0 ? somaTotal*-1 : somaTotal ;
-
-            label1.Text = "Soma de movimentações do valor filtrado: " + somaTotal.ToString();
-
-
+            txtTotal.Text = somaTotal.ToString();
+            txtEntrada.Text = somaEntrada.ToString();
+            txtSaida.Text = somaSaida.ToString();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
@@ -171,7 +176,7 @@ namespace SuaCarteiraEmDia.View.Principal
             }
         }
 
-        
+
 
         private void relatorioControllerBindingSource_CurrentChanged(object sender, EventArgs e)
         {
@@ -211,6 +216,16 @@ namespace SuaCarteiraEmDia.View.Principal
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel9_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox15_TextChanged(object sender, EventArgs e)
         {
 
         }

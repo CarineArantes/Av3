@@ -44,7 +44,6 @@
             toolStrip2 = new ToolStrip();
             novaToolStripButton = new ToolStripButton();
             abrirToolStripButton = new ToolStripButton();
-            recortarToolStripButton = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)viewCatagorias).BeginInit();
             toolStrip2.SuspendLayout();
@@ -53,12 +52,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.ForeColor = Color.CornflowerBlue;
-            label1.Location = new Point(46, 57);
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(370, 67);
             label1.Name = "label1";
-            label1.Size = new Size(58, 15);
+            label1.Size = new Size(102, 25);
             label1.TabIndex = 1;
-            label1.Text = "Categoria";
+            label1.Text = "Categorias";
             label1.Click += label1_Click_1;
             // 
             // bindingSource1
@@ -70,15 +70,19 @@
             viewCatagorias.AllowUserToAddRows = false;
             viewCatagorias.AllowUserToDeleteRows = false;
             viewCatagorias.AutoGenerateColumns = false;
+            viewCatagorias.BackgroundColor = Color.White;
+            viewCatagorias.BorderStyle = BorderStyle.None;
             viewCatagorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             viewCatagorias.Columns.AddRange(new DataGridViewColumn[] { Id, nomeDataGridViewTextBoxColumn, corDataGridViewTextBoxColumn, dataCriacaoDataGridViewTextBoxColumn, dataAlteracaoDataGridViewTextBoxColumn, ativoDataGridViewCheckBoxColumn });
             viewCatagorias.DataSource = bindingSource1;
-            viewCatagorias.Location = new Point(14, 142);
+            viewCatagorias.GridColor = Color.White;
+            viewCatagorias.Location = new Point(113, 144);
             viewCatagorias.Name = "viewCatagorias";
             viewCatagorias.ReadOnly = true;
             viewCatagorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            viewCatagorias.Size = new Size(728, 99);
+            viewCatagorias.Size = new Size(727, 239);
             viewCatagorias.TabIndex = 10;
+            viewCatagorias.CellContentClick += viewCatagorias_CellContentClick;
             viewCatagorias.CellFormatting += viewCatagorias_CellFormatting;
             // 
             // Id
@@ -126,11 +130,11 @@
             // button2
             // 
             button2.ForeColor = Color.CornflowerBlue;
-            button2.Location = new Point(529, 53);
+            button2.Location = new Point(427, 107);
             button2.Name = "button2";
-            button2.Size = new Size(186, 23);
+            button2.Size = new Size(142, 23);
             button2.TabIndex = 11;
-            button2.Text = "Filtrar Categoria Ativas";
+            button2.Text = "Filtrar Categorias";
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
@@ -138,21 +142,21 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Ativos", "Inativos", "Todos" });
-            comboBox1.Location = new Point(281, 49);
+            comboBox1.Location = new Point(283, 107);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 13;
             comboBox1.Tag = "";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // toolStrip2
             // 
-            toolStrip2.Items.AddRange(new ToolStripItem[] { novaToolStripButton, abrirToolStripButton, recortarToolStripButton });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { novaToolStripButton, abrirToolStripButton });
             toolStrip2.Location = new Point(0, 0);
             toolStrip2.Name = "toolStrip2";
             toolStrip2.Size = new Size(757, 25);
             toolStrip2.TabIndex = 14;
             toolStrip2.Text = "toolStrip2";
- 
             // 
             // novaToolStripButton
             // 
@@ -161,7 +165,7 @@
             novaToolStripButton.ImageTransparentColor = Color.Magenta;
             novaToolStripButton.Name = "novaToolStripButton";
             novaToolStripButton.Size = new Size(23, 22);
-            novaToolStripButton.Text = "&Nova";
+            novaToolStripButton.Text = "Nova Categoria";
             novaToolStripButton.Click += novaToolStripButton_Click;
             // 
             // abrirToolStripButton
@@ -171,18 +175,8 @@
             abrirToolStripButton.ImageTransparentColor = Color.Magenta;
             abrirToolStripButton.Name = "abrirToolStripButton";
             abrirToolStripButton.Size = new Size(23, 22);
-            abrirToolStripButton.Text = "&Abrir";
+            abrirToolStripButton.Text = "&Editar Categoria";
             abrirToolStripButton.Click += abrirToolStripButton_Click;
-            // 
-            // recortarToolStripButton
-            // 
-            recortarToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            recortarToolStripButton.Image = (Image)resources.GetObject("recortarToolStripButton.Image");
-            recortarToolStripButton.ImageTransparentColor = Color.Magenta;
-            recortarToolStripButton.Name = "recortarToolStripButton";
-            recortarToolStripButton.Size = new Size(23, 22);
-            recortarToolStripButton.Text = "R&ecortar";
-            recortarToolStripButton.Click += recortarToolStripButton_Click;
             // 
             // UserControlCategoria
             // 
@@ -194,6 +188,8 @@
             Controls.Add(button2);
             Controls.Add(viewCatagorias);
             Controls.Add(label1);
+            ForeColor = Color.Black;
+            Margin = new Padding(0);
             Name = "UserControlCategoria";
             Size = new Size(757, 383);
             Load += UserControlCategoria_Load;

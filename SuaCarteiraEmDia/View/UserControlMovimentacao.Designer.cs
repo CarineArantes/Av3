@@ -60,7 +60,7 @@
             buttonBuscar = new Button();
             dateTimePicker1 = new DateTimePicker();
             tableLayoutPanel11 = new TableLayoutPanel();
-            buttonNovaMovimentacao = new Button();
+            btnNovaMovimentacao = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanelV.SuspendLayout();
             panel1.SuspendLayout();
@@ -102,8 +102,8 @@
             // 
             // flowLayou1
             // 
+            flowLayou1.AutoScroll = true;
             flowLayou1.Dock = DockStyle.Fill;
-            flowLayou1.FlowDirection = FlowDirection.TopDown;
             flowLayou1.Location = new Point(3, 144);
             flowLayou1.Name = "flowLayou1";
             flowLayou1.Size = new Size(725, 268);
@@ -467,6 +467,7 @@
             groupBox1.Dock = DockStyle.Fill;
             groupBox1.Location = new Point(3, 3);
             groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new Padding(4);
             groupBox1.Size = new Size(173, 71);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
@@ -480,9 +481,9 @@
             buttonBuscar.FlatStyle = FlatStyle.Flat;
             buttonBuscar.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             buttonBuscar.ForeColor = Color.White;
-            buttonBuscar.Location = new Point(3, 45);
+            buttonBuscar.Location = new Point(4, 44);
             buttonBuscar.Name = "buttonBuscar";
-            buttonBuscar.Size = new Size(167, 23);
+            buttonBuscar.Size = new Size(165, 23);
             buttonBuscar.TabIndex = 1;
             buttonBuscar.Text = "Buscar";
             buttonBuscar.UseVisualStyleBackColor = false;
@@ -492,9 +493,9 @@
             // 
             dateTimePicker1.Dock = DockStyle.Fill;
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(3, 19);
+            dateTimePicker1.Location = new Point(4, 20);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(167, 23);
+            dateTimePicker1.Size = new Size(165, 23);
             dateTimePicker1.TabIndex = 0;
             // 
             // tableLayoutPanel11
@@ -502,7 +503,7 @@
             tableLayoutPanel11.ColumnCount = 2;
             tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 66.85185F));
             tableLayoutPanel11.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.1481476F));
-            tableLayoutPanel11.Controls.Add(buttonNovaMovimentacao, 1, 1);
+            tableLayoutPanel11.Controls.Add(btnNovaMovimentacao, 1, 1);
             tableLayoutPanel11.Dock = DockStyle.Fill;
             tableLayoutPanel11.Location = new Point(182, 3);
             tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -513,20 +514,21 @@
             tableLayoutPanel11.Size = new Size(540, 71);
             tableLayoutPanel11.TabIndex = 1;
             // 
-            // buttonNovaMovimentacao
+            // btnNovaMovimentacao
             // 
-            buttonNovaMovimentacao.BackColor = Color.CornflowerBlue;
-            buttonNovaMovimentacao.Cursor = Cursors.Hand;
-            buttonNovaMovimentacao.Dock = DockStyle.Fill;
-            buttonNovaMovimentacao.FlatStyle = FlatStyle.Flat;
-            buttonNovaMovimentacao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            buttonNovaMovimentacao.ForeColor = Color.White;
-            buttonNovaMovimentacao.Location = new Point(364, 20);
-            buttonNovaMovimentacao.Name = "buttonNovaMovimentacao";
-            buttonNovaMovimentacao.Size = new Size(173, 29);
-            buttonNovaMovimentacao.TabIndex = 0;
-            buttonNovaMovimentacao.Text = "Nova Movimentação";
-            buttonNovaMovimentacao.UseVisualStyleBackColor = false;
+            btnNovaMovimentacao.BackColor = Color.CornflowerBlue;
+            btnNovaMovimentacao.Cursor = Cursors.Hand;
+            btnNovaMovimentacao.Dock = DockStyle.Fill;
+            btnNovaMovimentacao.FlatStyle = FlatStyle.Flat;
+            btnNovaMovimentacao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNovaMovimentacao.ForeColor = Color.White;
+            btnNovaMovimentacao.Location = new Point(364, 20);
+            btnNovaMovimentacao.Name = "btnNovaMovimentacao";
+            btnNovaMovimentacao.Size = new Size(173, 29);
+            btnNovaMovimentacao.TabIndex = 0;
+            btnNovaMovimentacao.Text = "Nova Movimentação";
+            btnNovaMovimentacao.UseVisualStyleBackColor = false;
+            btnNovaMovimentacao.Click += btnNovaMovimentacao_Click;
             // 
             // UserControlMovimentacao
             // 
@@ -597,7 +599,7 @@
         private Button buttonBuscar;
         private DateTimePicker dateTimePicker1;
         private TableLayoutPanel tableLayoutPanel11;
-        private Button buttonNovaMovimentacao;
+        private Button btnNovaMovimentacao;
         private FlowLayoutPanel flowLayou1;
     }
 }

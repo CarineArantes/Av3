@@ -21,8 +21,14 @@ namespace SuaCarteiraEmDia.View.Login
         public FrmLogin()
         {
             InitializeComponent();
-
+            ConfigurarCamposDeSenha();
         }
+        
+        private void ConfigurarCamposDeSenha()
+        {
+            senha.UseSystemPasswordChar = true;
+        }
+
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
@@ -49,21 +55,6 @@ namespace SuaCarteiraEmDia.View.Login
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void username_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void senha_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             if (username.Text.Trim().Length <= 0 || senha.Text.Trim().Length <= 0)
@@ -74,7 +65,7 @@ namespace SuaCarteiraEmDia.View.Login
             {
                 try
                 {
-                  Usuario usuario = Controller.UsuarioController.Login(username.Text, senha.Text);
+                    Usuario usuario = Controller.UsuarioController.Login(username.Text, senha.Text);
                     if (usuario != null)
                     {
                         FrmPrincipal principal = new FrmPrincipal(usuario);
@@ -82,25 +73,53 @@ namespace SuaCarteiraEmDia.View.Login
                         this.Hide();
                     }
                 }
-                catch(Exception ex) {
+                catch (Exception ex)
+                {
                     MessageBox.Show(ex.Message);
                 }
-               
+
             }
-
-
         }
 
         private void esqueciSenha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            FrmRecuperarSenha recuperarSenha = new FrmRecuperarSenha();
-            recuperarSenha.Show();
+            Verificacoes verificacoes = new Verificacoes();
+
+            if (string.IsNullOrWhiteSpace(username.Text))
+            {
+                MessageBox.Show("Por favor, informe o username");
+                return;
+            }
+
+            if (!verificacoes.verificarCaracteres(username.Text, 60, 4))
+            {
+                MessageBox.Show("O username deve conter entre 4 e 60 caracteres");
+                return;
+            }
+
+            Usuario usuario = Controller.UsuarioController.BuscarUsuario(username.Text, true);
+
+            if (usuario != null)
+            {
+                FrmRecuperarSenha recuperarSenha = new FrmRecuperarSenha(usuario.Id);
+                recuperarSenha.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuário não encontrado!");
+            }
+
         }
 
         private void cadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FrmCadastro cadastro = new FrmCadastro();
             cadastro.Show();
+        }
+
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

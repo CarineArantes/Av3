@@ -31,81 +31,51 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             tableLayoutPanel1 = new TableLayoutPanel();
             panelConteudo = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            pictureBox1 = new PictureBox();
             panelMenu = new Panel();
             btn_sair = new Button();
             btn_relatorio = new Button();
             btn_categoria = new Button();
             btn_movimetacao = new Button();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            tableLayoutPanel3 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panelMenu.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.BackColor = Color.CornflowerBlue;
+            tableLayoutPanel1.BackColor = Color.Transparent;
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.625F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 85.375F));
             tableLayoutPanel1.Controls.Add(panelConteudo, 1, 1);
-            tableLayoutPanel1.Controls.Add(panel2, 1, 0);
             tableLayoutPanel1.Controls.Add(panelMenu, 0, 1);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 1, 0);
+            tableLayoutPanel1.Controls.Add(tableLayoutPanel3, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Margin = new Padding(0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 433F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 492F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(853, 473);
+            tableLayoutPanel1.Size = new Size(1069, 541);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panelConteudo
             // 
             panelConteudo.BackColor = Color.White;
             panelConteudo.Dock = DockStyle.Fill;
-            panelConteudo.Location = new Point(124, 40);
+            panelConteudo.Location = new Point(156, 49);
             panelConteudo.Margin = new Padding(0);
             panelConteudo.Name = "panelConteudo";
-            panelConteudo.Size = new Size(729, 433);
+            panelConteudo.Padding = new Padding(5);
+            panelConteudo.Size = new Size(913, 492);
             panelConteudo.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.White;
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(124, 0);
-            panel2.Margin = new Padding(0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(729, 40);
-            panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(pictureBox1);
-            panel3.Dock = DockStyle.Right;
-            panel3.Location = new Point(655, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(74, 40);
-            panel3.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(22, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(34, 28);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // panelMenu
             // 
@@ -115,10 +85,10 @@
             panelMenu.Controls.Add(btn_categoria);
             panelMenu.Controls.Add(btn_movimetacao);
             panelMenu.Dock = DockStyle.Top;
-            panelMenu.Location = new Point(0, 40);
+            panelMenu.Location = new Point(0, 49);
             panelMenu.Margin = new Padding(0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(124, 433);
+            panelMenu.Size = new Size(156, 492);
             panelMenu.TabIndex = 2;
             // 
             // btn_sair
@@ -129,9 +99,9 @@
             btn_sair.FlatStyle = FlatStyle.Flat;
             btn_sair.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn_sair.ForeColor = Color.White;
-            btn_sair.Location = new Point(-2, 388);
+            btn_sair.Location = new Point(-2, 447);
             btn_sair.Name = "btn_sair";
-            btn_sair.Size = new Size(138, 43);
+            btn_sair.Size = new Size(157, 43);
             btn_sair.TabIndex = 8;
             btn_sair.Text = "Sair";
             btn_sair.UseVisualStyleBackColor = false;
@@ -145,9 +115,9 @@
             btn_relatorio.FlatStyle = FlatStyle.Flat;
             btn_relatorio.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn_relatorio.ForeColor = Color.White;
-            btn_relatorio.Location = new Point(-11, 120);
+            btn_relatorio.Location = new Point(2, 143);
             btn_relatorio.Name = "btn_relatorio";
-            btn_relatorio.Size = new Size(147, 41);
+            btn_relatorio.Size = new Size(153, 41);
             btn_relatorio.TabIndex = 7;
             btn_relatorio.Text = "Relatórios";
             btn_relatorio.UseVisualStyleBackColor = false;
@@ -161,9 +131,9 @@
             btn_categoria.FlatStyle = FlatStyle.Flat;
             btn_categoria.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn_categoria.ForeColor = Color.White;
-            btn_categoria.Location = new Point(-11, 63);
+            btn_categoria.Location = new Point(0, 86);
             btn_categoria.Name = "btn_categoria";
-            btn_categoria.Size = new Size(147, 41);
+            btn_categoria.Size = new Size(155, 41);
             btn_categoria.TabIndex = 6;
             btn_categoria.Text = "Categorias";
             btn_categoria.UseVisualStyleBackColor = false;
@@ -177,32 +147,73 @@
             btn_movimetacao.FlatStyle = FlatStyle.Flat;
             btn_movimetacao.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btn_movimetacao.ForeColor = Color.White;
-            btn_movimetacao.Location = new Point(-11, 3);
+            btn_movimetacao.Location = new Point(0, 26);
             btn_movimetacao.Name = "btn_movimetacao";
-            btn_movimetacao.Size = new Size(147, 41);
+            btn_movimetacao.Size = new Size(155, 41);
             btn_movimetacao.TabIndex = 5;
             btn_movimetacao.Text = "Movimentações";
             btn_movimetacao.UseVisualStyleBackColor = false;
             btn_movimetacao.Click += btn_movimetacao_Click;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 87.54134F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.4586554F));
+            tableLayoutPanel2.Controls.Add(pictureBox1, 1, 0);
+            tableLayoutPanel2.Dock = DockStyle.Fill;
+            tableLayoutPanel2.Location = new Point(156, 0);
+            tableLayoutPanel2.Margin = new Padding(0);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Size = new Size(913, 49);
+            tableLayoutPanel2.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Dock = DockStyle.Right;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(847, 10);
+            pictureBox1.Margin = new Padding(0, 10, 0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(66, 39);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.BackColor = Color.CornflowerBlue;
+            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Location = new Point(0, 0);
+            tableLayoutPanel3.Margin = new Padding(0);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Size = new Size(156, 49);
+            tableLayoutPanel3.TabIndex = 4;
             // 
             // FrmPrincipal
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(853, 473);
+            ClientSize = new Size(1069, 541);
             Controls.Add(tableLayoutPanel1);
-            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sua Carteira Em Dia ";
-            FormClosing += FrmPrincipal_FormClosing;
             Load += FrmPrincipal_Load;
             tableLayoutPanel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelMenu.ResumeLayout(false);
+            tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -210,13 +221,13 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panelConteudo;
-        private Panel panel2;
         private Panel panelMenu;
         private Button btn_sair;
         private Button btn_relatorio;
         private Button btn_categoria;
         private Button btn_movimetacao;
-        private Panel panel3;
         private PictureBox pictureBox1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private TableLayoutPanel tableLayoutPanel3;
     }
 }

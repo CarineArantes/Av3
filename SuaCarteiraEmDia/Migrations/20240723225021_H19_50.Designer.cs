@@ -12,8 +12,8 @@ using SuaCarteiraEmDia.Data;
 namespace SuaCarteiraEmDia.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240717003626_h1")]
-    partial class h1
+    [Migration("20240723225021_H19_50")]
+    partial class H19_50
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
